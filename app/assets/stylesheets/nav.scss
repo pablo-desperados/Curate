@@ -1,0 +1,22 @@
+.top-bar {
+  background: white
+}
+
+.top-bar a{
+  background: white;
+  color: grey;
+  &:hover{
+    border-bottom: solid #1bc74e;
+    color: black;
+    transition: 0.30s
+  }
+}
+
+.top-bar ul{
+  background: white
+}
+
+.top-bar-right li{
+  margin-left: 20px;
+  margin-right: 20px;
+}

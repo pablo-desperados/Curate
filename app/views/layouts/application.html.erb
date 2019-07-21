@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProjectLaunch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="title-bar" data-responsive-toggle="mobile-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+
+  <div class="top-bar row columns" id= "mobile-menu">
+    <div class="top-bar-left" data-dropdown-menu>
+      <ul class="menu simple">
+        <li  class="menu-text"> <%= image_tag "logo.png", width:"150" %></li>
+        <li>
+          <a href="#">ABOUT</a>
+        </li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu simple">
+        <%- if current_user -%>
+          <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></li>
+        <%- else -%>
+          <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+          <li><%= link_to 'SIGN IN', new_user_session_path %></li>
+        <%- end -%>
+      </ul>
+    </div>
+  </div>
+
+  <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
+  <%- end -%>
+
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+
+  <%- if Rails.env.development? || Rails.env.test? -%>
+    <%= javascript_tag do %>
+      window.railsEnv = '<%= Rails.env %>'
+    <%- end -%>
+  <%- end -%>
+  <%= javascript_pack_tag 'application' %>
+
+  <%= yield :extra_footer %>
+</body>
+</html>
