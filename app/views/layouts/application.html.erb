@@ -27,6 +27,7 @@
       <ul class="menu simple">
         <%- if current_user -%>
         <li ></li>
+          <li><%= "Welcome #{current_user.first_name}" %> </li>
           <li ><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "nav-button" %></li>
         <%- else -%>
           <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
@@ -36,11 +37,6 @@
     </div>
   </div>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>
