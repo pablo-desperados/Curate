@@ -10,7 +10,8 @@ $sub-color: #f4f4f5;
 .mainpage-content{
 
   background: $main-color;
-  padding-top: 250px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   @media screen and (max-width: 640px){
     padding-top: 100px;
   }

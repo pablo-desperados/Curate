@@ -54,6 +54,7 @@ gem 'database_cleaner', group: [:development, :test]
 gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
+gem "animate-rails"
 gem 'autoprefixer-rails'
 gem 'foundation-rails', '~> 6.0'
 gem 'webpacker', '~> 3.3'
