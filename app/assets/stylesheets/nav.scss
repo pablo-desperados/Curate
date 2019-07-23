@@ -1,10 +1,50 @@
+$sub-color: #f4f4f5;
+$main-color: #EAEEF2;
+$accent: #1ac74f;
+
+.title-bar{
+  background-color: white;
+  border-bottom: solid 1px rgba(0,0,0,.14);
+}
+.mainpage-action-button{
+  background: $accent;
+  border-radius: 25px;
+  font-size: 1.20em;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  &:hover{
+    background: white;
+    border-color: $accent;
+    color: $accent;
+  }
+}
+.menu-icon{
+  transition: 0.20s
+}
+.title-bar-title{
+  color: #34393f;
+  font-size: bold;
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 5%;
+}
+.title-bar-right{
+  text-align: left;
+}
+
+.menu-icon::after{
+  background: #151515;
+  -webkit-box-shadow: 0 7px 0 #151515, 0 14px 0 #151515;
+
+}
+
 .top-bar {
   background: white;
   border-bottom: solid 1px rgba(0,0,0,.14);
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
-  
+
 }
 
 .top-bar .nav-button {
@@ -23,10 +63,14 @@
 }
 
 .top-bar-right li{
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 0px;
+  margin-top: 0px;
 }
 
 .callout .error-title{
   color: #ce4c4c;
+}
+
+.welcome-sign{
+  height: auto;
 }
