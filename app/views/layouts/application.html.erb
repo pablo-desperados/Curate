@@ -4,21 +4,21 @@
   <title>ProjectLaunch</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <div class="title-bar" data-responsive-toggle="mobile-menu" data-hide-for="medium">
+  <div class="title-bar menu-horizontal" data-responsive-toggle="mobile-menu" data-hide-for="medium">
     <div class="title-bar-title">Menu</div>
     <div class="title-bar-right">
       <button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
     </div>
   </div>
 
-  <div class="top-bar row columns" id="mobile-menu">
+  <div class="top-bar row columns" id="mobile-menu" data-animate="hinge-in-from-top">
     <div class="top-bar-left" data-dropdown-menu>
-      <ul class="vertical menu medium-horizontal  " data-dropdown-menu>
+      <ul class="vertical menu medium-horizontal" data-dropdown-menu>
         <li  class="menu-text"> <%= link_to image_tag("logo.png", width:"150"), root_path %> </li>
 
       </ul>

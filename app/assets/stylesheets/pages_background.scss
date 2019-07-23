@@ -8,5 +8,10 @@ $sub-color: #f4f4f5;
 }
 
 .mainpage-content{
+
   background: $main-color;
+  padding-top: 250px;
+  @media screen and (max-width: 640px){
+    padding-top: 100px;
+  }
 }
