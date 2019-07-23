@@ -11,7 +11,11 @@ feature 'user signs out', %Q{
   #   forgotten on the machine I'm using
 
   scenario 'authenticated user signs out' do
-    user = FactoryBot.create(:user)
+    user = User.create(
+      first_name: "John",
+      last_name: "Smith",
+      email: "jsmith@email.com",
+      password: "password")
 
     visit new_user_session_path
 
@@ -20,14 +24,12 @@ feature 'user signs out', %Q{
 
     click_button 'Log in'
 
-    expect(page).to have_content('Signed in successfully')
-
-    click_link 'Sign Out'
-    expect(page).to have_content('Signed out successfully')
+    click_link 'SIGN OUT'
+    expect(page).to have_content('SIGN UP')
   end
 
   scenario 'unauthenticated user attempts to sign out' do
     visit '/'
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('SIGN OUT')
   end
 end
