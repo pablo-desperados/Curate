@@ -1,4 +1,4 @@
-<% if resource.errors.any? %>
+<% if resource.errors.any? && !resource.validate %>
 <div class="grid-container">
   <div class="grid-x align-center">
     <div class="callout alert columns small-6 " id="error_explanation">

@@ -5,8 +5,20 @@
         <h2 class="text-center cell">Log in</h2>
         <div class="callout">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="field">
+          <% flash.each do |name, msg| %>
+          <div class="callout alert">
+          <% if msg.class == Array %>
+              <% msg.each do |message| %>
+                  <%= content_tag :div, message, :id => "flash_#{name}" %>
+              <% end %>
+            <% else %>
+
+              <%= content_tag :div, msg,:class =>"error-title", :id => "flash_#{name}" %>
+
+            <% end %>
+          </div>
+          <% end %>
+                    <div class="field">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
