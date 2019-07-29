@@ -6,7 +6,7 @@
     </div>
     <div class="grid-x animated fadeIn ">
     <%- if current_user -%>
-      <%= link_to 'Create a story', root_path , class: "small-4 large-2 button mainpage-action-button" %>
+      <%= link_to 'Create a story',  user_customers_path(current_user) , class: "small-4 large-2 button mainpage-action-button" %>
     <%- else -%>
       <%= link_to 'Sign up', new_user_registration_path , class: "small-4 large-2 button mainpage-action-button" %>
     <%- end -%>

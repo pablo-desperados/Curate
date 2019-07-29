@@ -9,38 +9,17 @@
 </head>
 <body>
 
-  <div class="title-bar menu-horizontal" data-responsive-toggle="mobile-menu" data-hide-for="medium">
+  <div class="title-bar menu-horizontal sticky" data-sticky  data-top-anchor="150"  data-responsive-toggle="mobile-menu" data-hide-for="medium">
     <div class="title-bar-title">Menu</div>
     <div class="title-bar-right">
       <button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
     </div>
   </div>
-
-  <div class="top-bar row columns" id="mobile-menu">
-    <div class="top-bar-left" data-dropdown-menu>
-      <ul class="vertical menu medium-horizontal" data-dropdown-menu>
-        <li  class="menu-text"> <%= link_to image_tag("logo.png", width:"150"), root_path %> </li>
-
-      </ul>
-    </div>
-    <div class="top-bar-right grid-container" id= "mobile-menu">
-      <ul class="vertical menu medium-horizontal">
-        <li >
-          <a class="nav-button" href="#">ABOUT</a>
-        </li>
-        <%- if current_user -%>
-        <li ></li>
-          <li ><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "nav-button" %></li>
-        <%- else -%>
-          <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
-          <li ><%= link_to 'SIGN IN', new_user_session_path, class: "nav-button" %></li>
-        <%- end -%>
-        <%- if current_user -%>
-        <li class="welcome-sign"><%= link_to "Welcome #{current_user.first_name}" %> </li>
-        <%- end -%>
-      </ul>
-    </div>
-  </div>
+  <%- if current_page?(mainpage_index_path) || current_page?(new_user_session_path) ||  current_page?(new_user_registration_path) -%>
+    <%= render "layouts/topbar_normal" %>
+  <%- else -%>
+    <%= render "layouts/topbar_customers" %>
+  <%- end -%>
 
     <%= yield %>
 
@@ -54,5 +33,6 @@
     <%= javascript_pack_tag 'application' %>
 
     <%= yield :extra_footer %>
+
 </body>
 </html>
