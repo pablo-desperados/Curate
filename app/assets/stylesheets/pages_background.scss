@@ -5,6 +5,7 @@ $sub-color: #f4f4f5;
 .authorization{
   box-shadow: 2px 2px 18px 1px #7076892b;
   background: $sub-color;
+  height: 100%;
 }
 
 .mainpage-content{
@@ -15,4 +16,17 @@ $sub-color: #f4f4f5;
   @media screen and (max-width: 640px){
     padding-top: 100px;
   }
+}
+
+.validation-content{
+  padding-top: 50px;
+  @media screen and (max-width: 640px){
+    padding-top: 20px;
+  }
+}
+
+.customer-index{
+  background: $sub-color;
+  -webkit-box-shadow: inset 0px 0px 15px -6px #000000;
+  box-shadow: inset 0px 0px 15px -6px #000000;
 }

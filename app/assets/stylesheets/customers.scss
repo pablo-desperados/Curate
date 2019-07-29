@@ -1,3 +1,5 @@
+@import 'nav';
+
 .callout-client-creation{
   min-width: 300px;
 }
@@ -12,4 +14,22 @@ padding-top: 10px;
   object-fit: cover;
   margin: 0 auto;
   padding: 10px;
+}
+
+.accordion-menu-form{
+  a{
+    color: #2D3F4E;
+    font-weight: bold;
+  }
+}
+
+.customer-button{
+  background-color: $accent;
+  font-size: 1em;
+  font-weight: bold;
+  &:hover{
+    background: white;
+    border-color: $accent;
+    color: $accent;
+  }
 }

@@ -3,6 +3,7 @@ $main-color: #EAEEF2;
 $accent: #1ac74f;
 
 .title-bar{
+  margin-top: 0px;
   background-color: white;
   border-bottom: solid 1px rgba(0,0,0,.14);
 }
@@ -45,6 +46,15 @@ $accent: #1ac74f;
   margin-left: 0;
   margin-right: 0;
 
+  .welcome-sign{
+    color: grey;
+    &:hover{
+      border-bottom: solid #1bc74e;
+      color: black;
+      transition: 0.30s
+    }
+  }
+
 }
 
 .top-bar .nav-button {
@@ -73,4 +83,37 @@ $accent: #1ac74f;
 
 .welcome-sign{
   height: auto;
+}
+.sticky-container{
+  background-color: $sub-color;
+}
+#sticky_footer {
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    background-color: $sub-color
+}
+#mobile-menu{
+  margin-top: 0px;
+}
+// Secondary top-bar
+.top-bar-secondary{
+  background: #2d3f4f;
+  ul{
+    background: #2d3f4f;
+  }
+  
+  .welcome-sign{
+    color: grey;
+    &:hover{
+      border-bottom: solid #1bc74e;
+      color: black;
+      transition: 0.30s
+    }
+  }
+  .nav-button{
+    background: #2d3f4f;
+    color: white;
+  }
 }
