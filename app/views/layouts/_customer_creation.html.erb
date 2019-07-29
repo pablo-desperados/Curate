@@ -1,0 +1,55 @@
+<div class="grid-y">
+    <div class="grid-y">
+     <%= image_tag("http://placebeard.it/640x480", width:"150", class: "profile-picture")%>
+    </div>
+    <div class="customer-form">
+      <%= form_for :customer do |form| %>
+      <ul class="accordion accordion-menu-form" data-accordion data-allow-all-closed="true">
+        <li class="accordion-item" data-accordion-item>
+          <a class="accordion-title">Contact Information</a>
+          <div class="accordion-content" data-tab-content>
+            <div class="grid-x">
+              <div class="cell small-5">
+                <%= form.label :first_name%>
+                <%= form.text_field :first_name%>
+              </div>
+              <div class="cell small-5 small-offset-2">
+                <%= form.label :last_name %>
+                <%= form.text_field :last_name %>
+              </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+              <%= form.label :email %>
+              <%= form.text_field :email %>
+
+              <%= form.label :phone_number %>
+              <%= form.telephone_field(:phone_number) %>
+            </div>
+          </div>
+        </li>
+        <li class="accordion-item" data-accordion-item>
+          <a class="accordion-title">Business Information (optional)</a>
+          <div class="accordion-content" data-tab-content>
+            <div class="grid-x">
+              <%= form.label :company_name%>
+              <%= form.text_field :company_name%>
+
+              <%= form.label :title, "Job title" %>
+              <%= form.text_field :title %>
+
+              <%= form.label :lifecycle_status, "Lead status" %>
+              <%= form.select(:lifecycle_status, Customer.lifecycle_status) %>
+
+              <%= form.label :location %>
+              <%= form.text_field :location %>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="actions">
+        <%= form.submit class: "customer-button button"%>
+      </div>
+      <% end %>
+    </div>
+    </div>
+</div>
