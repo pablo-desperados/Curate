@@ -7,10 +7,16 @@
 
 .profile-picture{
   border-radius: 50%;
+  border: solid 1px #cbd6e2;
   object-fit: cover;
   margin: 0 auto;
-  padding: 10px;
 }
+
+.customer-form-title{
+    font-family: 'Roboto';
+    color: #707375;
+}
+
 .profile-picture-container{
   border-bottom: solid 1px #cbd6e2;
 }
