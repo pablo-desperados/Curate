@@ -1,0 +1,76 @@
+.card{
+  font-family: 'Roboto';
+  max-width: 300px;
+  min-width: 300px;
+  margin: 60px 30px;
+  margin-right: 30px;
+  background: white;
+  height: 400px;
+  box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
+
+}
+
+.card-picture{
+  width: 100%;
+}
+
+.card-date{
+    color: grey;
+    font-size: 15px;
+}
+.card-name{
+  text-align: center;
+  color: black;
+  overflow-x: hidden;
+  border-bottom: solid 1px #cbd6e2;
+
+}
+
+.card-tag{
+
+  border-radius: 15px;
+  border-style: solid;
+  text-align: center;
+}
+
+.status-tag{
+
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+.info-tag{
+  margin-top: 15px;
+}
+
+.not-contacted{
+  background-color: #767676;
+  font-weight: bold;
+  color: white
+}
+.contacted{
+  background-color: #ffae00;
+  font-weight: bold;
+  color: white
+}
+.new-lead{
+  background-color: #3adb76;
+  font-weight: bold;
+  color: white;
+}
+.current-customer{
+  background-color: #17a2b8;
+  font-weight: bold;
+  color: white;
+}
+.disqualified{
+  background-color: black;
+  font-weight: bold;
+  color: white;
+}
+.champion{
+  background-color: #9c27b0;
+  font-weight: bold;
+  color: white;
+}

@@ -7,4 +7,12 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :create]
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:show] do
+        resources :customers, only: [:index]
+      end
+    end
+  end
+
 end

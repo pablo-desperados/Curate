@@ -2,10 +2,10 @@ class CustomersController < ApplicationController
   before_action :authenticate_user
 
   def create
-    customer = Customer.new(customer_params)
-    binding.pry
-    if customer.save
-      binding.pry
+    new_customer = Customer.new(customer_params)
+    if new_customer.save
+      Relation.create(user: current_user, customer: new_customer)
+      flash[:notice]="The user was succesfully submitted!"
     end
   end
 
