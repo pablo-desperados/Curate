@@ -2,6 +2,7 @@
 
 .callout-client-creation{
   min-width: 300px;
+  max-height: 800px;
 }
 
 
@@ -31,17 +32,27 @@
   a{
     color: #2D3F4E;
     font-weight: bold;
+    font-size: 1em;
     background-color: $sub-color
   }
 }
 
+.accordion-label{
+    min-width: 300px;
+}
 .customer-button{
   background-color: $accent;
-  font-size: 1em;
+  font-size: 0.80em;
   font-weight: bold;
   &:hover{
     background: white;
     border-color: $accent;
     color: $accent;
   }
+}
+
+.customer-grid{
+  margin-top: 50px;
+  display: grid;
+  overflow-y: auto !important visible;
 }
