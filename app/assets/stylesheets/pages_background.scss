@@ -16,6 +16,7 @@ $sub-color: #f4f4f5;
   @media screen and (max-width: 640px){
     padding-top: 100px;
   }
+  height: 100%;
 }
 
 .validation-content{
@@ -29,5 +30,7 @@ $sub-color: #f4f4f5;
   background: $sub-color;
   -webkit-box-shadow: inset 0px 0px 15px -6px #7f7979a1;
   box-shadow: inset 0px 0px 15px -6px #7f7979a1;
-  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
