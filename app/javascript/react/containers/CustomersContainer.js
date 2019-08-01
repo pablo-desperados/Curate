@@ -12,7 +12,7 @@ class CustomersContainer extends React.Component{
   }
 
   handleCardClick(event){
-    window.location.href="/users/"
+    window.location.href = `/users/${this.props.match.params.id}/customers/${event.toString()}`
   }
 
   fetchUserCustomers(){
@@ -44,6 +44,7 @@ class CustomersContainer extends React.Component{
       return(
         <CustomerCardContainer
         key={customer.id}
+        id={customer.id}
         handleCardClick={this.handleCardClick}
         full_date={full_date}
         first_name={customer.first_name}
