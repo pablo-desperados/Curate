@@ -14,9 +14,9 @@ const CustomerCardContainer=(props)=>{
     }else {
       company = "N/A"
     }
-    
+    debugger
   return(
-    <div className="card grid-y">
+    <div className="card grid-y click-function" onClick={props.handleCardClick}>
         <div className="cell small-5">
           <img className="card-picture" src={profile_picture}></img>
         </div>

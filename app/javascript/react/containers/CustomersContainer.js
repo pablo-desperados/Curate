@@ -1,6 +1,6 @@
 import React from 'react'
 import CustomerCardContainer from './CustomerCardContainer'
-
+import { Redirect} from "react-router-dom"
 class CustomersContainer extends React.Component{
   constructor(props){
     super(props)
@@ -8,6 +8,11 @@ class CustomersContainer extends React.Component{
         customerList:[]
       }
     this.fetchUserCustomers = this.fetchUserCustomers.bind(this)
+    this.handleCardClick = this.handleCardClick.bind(this)
+  }
+
+  handleCardClick(event){
+    window.location.href="/users/"
   }
 
   fetchUserCustomers(){
@@ -39,6 +44,7 @@ class CustomersContainer extends React.Component{
       return(
         <CustomerCardContainer
         key={customer.id}
+        handleCardClick={this.handleCardClick}
         full_date={full_date}
         first_name={customer.first_name}
         last_name={customer.last_name}
