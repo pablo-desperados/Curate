@@ -56,10 +56,3 @@
   display: grid;
   overflow-y: auto !important visible;
 }
-
-.click-function:hover{
-  transition: transform .2s;
-  transform: scale(1.05);
-  box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07)
-  darken(#341cac, 10%);
-}

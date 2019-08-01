@@ -2,9 +2,7 @@
   <div class="top-bar-left" data-dropdown-menu>
     <ul class="vertical menu medium-horizontal" data-dropdown-menu>
       <li  class="menu-text"> <%= link_to image_tag("logo.png", width:"150"), root_path %> </li>
-      <%- if current_user -%>
-      <li class="dashboard-button"><%= link_to 'DASHBOARD', user_customers_path(current_user),  class: "dashboard-button customer-button button"%> </li>
-      <%- end -%>
+
     </ul>
   </div>
   <div class="top-bar-right grid-container" id= "mobile-menu">

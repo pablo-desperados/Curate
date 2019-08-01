@@ -50,7 +50,7 @@ $accent: #1ac74f;
     color: grey;
     &:hover{
       border-bottom: solid #1bc74e;
-      font-weight: bold;
+      color: black;
       transition: 0.30s
     }
   }
@@ -62,7 +62,7 @@ $accent: #1ac74f;
   color: grey;
   &:hover{
     border-bottom: solid #1bc74e;
-    font-weight: bold;
+    color: black;
     transition: 0.30s
   }
 
@@ -103,28 +103,17 @@ $accent: #1ac74f;
   ul{
     background: #2d3f4f;
   }
-
+  
   .welcome-sign{
     color: grey;
     &:hover{
       border-bottom: solid #1bc74e;
-      font-weight: bold;
+      color: black;
       transition: 0.30s
     }
   }
   .nav-button{
     background: #2d3f4f;
     color: white;
-  }
-}
-.dashboard-button{
-  padding-top:25px;
-  background-color: transparent;
-  color: $accent;
-  border-color: $accent;
-  border-width: 2px;
-  &:hover{
-    background-color: transparent;
-    border-width: medium;
   }
 }
