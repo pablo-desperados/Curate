@@ -2,15 +2,22 @@ class CustomersController < ApplicationController
   before_action :authenticate_user
 
   def create
-    new_customer = Customer.new(customer_params)
-    if new_customer.save
-      Relation.create(user: current_user, customer: new_customer)
-      flash[:notice]="The user was succesfully submitted!"
+    @new_customer = Customer.new(customer_params)
+    if @new_customer.save
+      Relation.create(user: current_user, customer: @new_customer)
+      redirect_to user_customer_path(current_user, @new_customer)
+    else
+      redirect_to user_customers_path(current_user)
+      flash[:notice]="There was an error in your submission"
     end
   end
 
   def new
     @customer = Customer.new
+  end
+
+  def show
+    @customer =Customer.find(params[:id])
   end
 
   def authenticate_user

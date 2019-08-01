@@ -1,8 +1,8 @@
 <div class="top-bar top-bar-secondary row columns" id="mobile-menu">
   <div class="top-bar-left" data-dropdown-menu>
     <ul class="vertical menu medium-horizontal" data-dropdown-menu>
-      <li  class="menu-text"> <%= link_to image_tag("logo-secondary.png", width:"150"), root_path %> </li>
-
+      <li class="menu-text"><%= link_to image_tag("logo-secondary.png", width:"150"), root_path %> </li>
+      <li class="dashboard-button"><%= link_to 'DASHBOARD', user_customers_path(current_user),  class: "dashboard-button customer-button button"%> </li>
     </ul>
   </div>
   <div class="top-bar-right grid-container" id= "mobile-menu">
