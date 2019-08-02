@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2019_07_29_210721) do
     t.string "email", null: false
     t.string "lifecycle_status", null: false
     t.string "phone_number"
-    t.string "title", default: "N/A"
-    t.string "company_name", default: "N/A"
-    t.string "location", default: "N/A"
+    t.string "title", default: ""
+    t.string "company_name", default: ""
+    t.string "location", default: ""
     t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

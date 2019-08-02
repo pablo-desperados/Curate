@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user
 
+
   def create
     @new_customer = Customer.new(customer_params)
     if @new_customer.save
@@ -29,7 +30,7 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:first_name, :last_name, :email, :lifecycle_status, :phone_number, :title, :company_name, :location, :profile_picture)
+    params.fetch(:customer, {}).permit(:first_name, :last_name, :email, :lifecycle_status, :phone_number, :title, :company_name, :location, :profile_picture)
   end
 
 end

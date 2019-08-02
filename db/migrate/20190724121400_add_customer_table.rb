@@ -7,9 +7,9 @@ class AddCustomerTable < ActiveRecord::Migration[5.2]
       t.string :lifecycle_status, null: false
 
       t.integer :phone_number
-      t.string :title, default: "N/A"
-      t.string :company_name, default: "N/A"
-      t.string :location, default: "N/A"
+      t.string :title, default: ""
+      t.string :company_name, default: ""
+      t.string :location, default: ""
       t.string :profile_picture
 
       t.timestamps null: false

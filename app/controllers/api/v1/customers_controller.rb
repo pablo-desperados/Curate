@@ -8,11 +8,17 @@ class Api::V1::CustomersController < ApiController
 
   def show
     @customer = Customer.find(params[:id])
-    render json: {customer:@customer}
+    @user_info = current_user
+    render json: {customer:@customer, user: @user_info}
   end
 
-  def delete
-    binding.pry
+  def destroy
+    @customer = Customer.find(params[:id])
+    if @customer.id == params[:id].to_i
+      @customer.destroy
+      render json: current_user
+
+    end
   end
 
   private
