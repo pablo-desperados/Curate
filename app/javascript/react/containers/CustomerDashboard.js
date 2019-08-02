@@ -9,18 +9,24 @@ class CustomerDashboard extends React.Component{
     this.handleDelete = this.handleDelete.bind(this)
   }
   handleDelete(event){
-      fetch(
-        fetch(`/api/v1/users/${this.props.match.params.id}/customers`)
-        .then((response) => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-          error = new Error(errorMessage);
-          throw(error)
-        }
-        })
-      )
+    fetch(`/api/v1/customers/${this.props.customerInfo.id}`,{
+      credentials: 'same-origin',
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+    if (response.ok) {
+      return response.json()
+    } else {
+      let errorMessage = `${response.status} (${response.statusText})`,
+      error = new Error(errorMessage);
+      throw(error)
+    }
+    })
+
   }
 
   render(){
@@ -29,7 +35,9 @@ class CustomerDashboard extends React.Component{
         <div className="form-container ">
           <CustomerEditForm
             information={this.props.customerInfo}
-            handleDelete={this.handleDelete}/>
+            handleDelete={this.handleDelete}
+            userInfo={this.props.currentUser}
+            />
         </div>
 
       </div>

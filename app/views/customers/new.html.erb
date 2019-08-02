@@ -1,12 +1,13 @@
-<div class="grid-y" >
+<div class="grid-container form-container-main">
+  <div class="grid-x" >
     <div class="customer-form">
-      <%= form_for :customer do |form| %>
+      <%= form_for [current_user, @customer] do |form| %>
       <div class="grid-y profile-picture-container">
         <h4 class="customer-form-title" >Add New Customer</h4>
         <%= image_tag "profile-default.png", width:"150", class: "profile-picture", id: "profile-pic" %>
         <%= form.file_field :profile_picture, class:"picture-submit cell", onChange: "changePicture()" %>
       </div>
-      <ul class="accordion accordion-menu-form" data-accordion data-allow-all-closed="true">
+      <ul class="accordion accordion-menu-form" data-accordion >
         <li class="accordion-item is-active" data-accordion-item>
           <a class="accordion-title">Contact Information</a>
           <div class="accordion-content" data-tab-content>
@@ -20,7 +21,7 @@
                 <%= form.text_field :last_name %>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
+            <div class="grid-x">
               <%= form.label :email %>
               <%= form.text_field :email %>
 
@@ -32,7 +33,7 @@
         <li class="accordion-item" data-accordion-item>
           <a class="accordion-title">Business Information<br>(optional)</a>
           <div class="accordion-content" data-tab-content>
-            <div class="grid-x">
+            <div class="grid-x grid-container">
               <%= form.label :company_name%>
               <%= form.text_field :company_name%>
 
@@ -53,5 +54,7 @@
       </div>
       <% end %>
     </div>
-    </div>
+  </div>
+</div>
+
 </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import handlingStatus from '../support/cardTag'
 
 const CustomerEditForm = props =>{
@@ -54,8 +55,7 @@ const CustomerEditForm = props =>{
         </div>
 
         <div className=" cell grid-x grid-margin-x">
-          <p className="cell small-6 button alert" onClick={props.handleDelete}>Delete</p>
-          <p className="cell small-6 button">Edit</p>
+          <p className="cell small-offset-3 small-6 button alert" onClick={props.handleDelete}>Delete user</p>
         </div>
       </div>
     </div>

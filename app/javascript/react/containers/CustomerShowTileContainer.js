@@ -1,11 +1,13 @@
 import React from 'react'
 import CustomerDashboard from './CustomerDashboard'
+import DiaryFormContainer from './DiaryFormContainer'
 
 class CustomerShowTileContainer extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      current_customer: {}
+      current_customer: {},
+      current_user: {}
     }
   }
 
@@ -21,7 +23,7 @@ class CustomerShowTileContainer extends React.Component{
     }
     })
     .then((response=>{
-      this.setState({current_customer: response.customer})
+      this.setState({current_customer: response.customer, current_user: response.user})
     }))
 
   }
@@ -32,10 +34,12 @@ class CustomerShowTileContainer extends React.Component{
       <div className=" cell small-5 callout-diary-creation">
         <CustomerDashboard
           customerInfo={this.state.current_customer}
+          currentUser={this.state.current_user}
+          handleReload={this.handleReload}
           />
       </div>
-
-      <div>
+      <div className="cell auto">
+        <DiaryFormContainer />
       </div>
     </div>
   )
