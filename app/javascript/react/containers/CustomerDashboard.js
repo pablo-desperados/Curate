@@ -8,7 +8,7 @@ class CustomerDashboard extends React.Component{
     }
     this.handleDelete = this.handleDelete.bind(this)
   }
-  handleDelete(event){  
+  handleDelete(event){
     fetch(`/api/v1/customers/${this.props.customerInfo.id}`,{
       credentials: 'same-origin',
       method: 'DELETE',
@@ -25,9 +25,6 @@ class CustomerDashboard extends React.Component{
       error = new Error(errorMessage);
       throw(error)
     }
-    })
-    .then((response)=>{
-      debugger
     })
 
   }
