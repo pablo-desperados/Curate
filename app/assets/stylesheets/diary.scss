@@ -1,0 +1,43 @@
+.callout-diary-creation{
+  min-width: 350px;
+  max-width: 600px;
+  max-height: 800px;
+  background: white;
+  border-color: grey 1px;
+  font-family: 'Roboto';
+  color: #33475b;
+  
+}
+.form-container{
+  border-top: transparent;
+  margin-bottom: 0;
+
+  p{
+    font-weight: bold;
+  }
+}
+
+.form-image{
+  border-radius: 8px;
+  border-style: solid 1px grey;
+  border: 1px;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+
+}
+.callout-image-form{
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.diary-updated{
+  font-weight: bold;
+}
+.diary-name{
+  margin-top: 20px;
+}
+.diary-title{
+  font-size: 1.5em;
+}

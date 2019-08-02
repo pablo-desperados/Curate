@@ -1,6 +1,7 @@
 import React from 'react'
 import CustomerCardContainer from './CustomerCardContainer'
 import { Redirect} from "react-router-dom"
+
 class CustomersContainer extends React.Component{
   constructor(props){
     super(props)
@@ -38,7 +39,7 @@ class CustomersContainer extends React.Component{
     }
 
   render(){
-    let customers = this.state.customerList.map(customer=>{
+    let customers = this.state.customerList.reverse().map(customer=>{
       let date = new Date(customer.created_at)
       let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
       return(

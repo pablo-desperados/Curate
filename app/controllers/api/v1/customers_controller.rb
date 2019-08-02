@@ -6,6 +6,15 @@ class Api::V1::CustomersController < ApiController
     render json: @user_customers
   end
 
+  def show
+    @customer = Customer.find(params[:id])
+    render json: {customer:@customer}
+  end
+
+  def delete
+    binding.pry
+  end
+
   private
 
   def authenticate_user

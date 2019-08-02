@@ -34,3 +34,11 @@ $sub-color: #f4f4f5;
   width: 100%;
   overflow-y: auto;
 }
+
+.customer-show{
+  background: $main-color;
+  -webkit-box-shadow: inset 0px 1px 35px 12px rgba(0,0,0,0.1);-moz-box-shadow: inset 0px 1px 35px 12px rgba(0,0,0,0.1);box-shadow: inset 0px 1px 35px 12px rgba(0,0,0,0.1);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
