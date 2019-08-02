@@ -1,6 +1,5 @@
 import React from 'react'
 import handlingStatus from '../support/cardTag'
-import * as logo from '../support/profile-default.png'
 
 const CustomerEditForm = props =>{
   let image, last_updated, name, title, status, statusclass, company, location, email, phone_number
