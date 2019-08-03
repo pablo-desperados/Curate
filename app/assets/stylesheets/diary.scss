@@ -1,3 +1,5 @@
+@import 'nav';
+
 .callout-diary-creation{
   min-width: 350px;
   max-width: 600px;
@@ -6,8 +8,22 @@
   border-color: grey 1px;
   font-family: 'Roboto';
   color: #33475b;
-  
+
 }
+
+.callout-diary-input{
+  background: #328b81;
+  border-radius: 10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+  height: 200px;
+  padding-top: 5px;
+  min-width: 800px;
+}
+
+#diary-input{
+
+}
+
 .form-container{
   border-top: transparent;
   margin-bottom: 0;
@@ -15,6 +31,11 @@
   p{
     font-weight: bold;
   }
+
+  label{
+    font-size: 30px !important;
+  }
+
 }
 
 .form-image{
@@ -40,4 +61,39 @@
 }
 .diary-title{
   font-size: 1.5em;
+}
+
+.diary-button{
+  color: white;
+}
+
+.delete-tag{
+    margin-bottom: 0px;
+}
+.link-dash{
+  color: white;
+}
+
+.diary-input-container{
+  font-family: 'Roboto';
+  color: #33475b;
+}
+
+.label-text{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.diary-action-button{
+  background: $accent;
+  border-radius: 25px;
+  font-size: 1.20em;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  &:hover{
+    background: transparent;
+    border-color: $accent;
+    color: $accent;
+  }
 }

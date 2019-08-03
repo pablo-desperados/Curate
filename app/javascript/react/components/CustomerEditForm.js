@@ -18,6 +18,7 @@ const CustomerEditForm = props =>{
     email = props.information.email
     phone_number = props.information.phone_number
   }
+
   return(
     <div>
       <div className="grid-x grid-margin-x callout form-container">
@@ -55,7 +56,7 @@ const CustomerEditForm = props =>{
         </div>
 
         <div className=" cell grid-x grid-margin-x">
-          <p className="cell small-offset-3 small-6 button alert" onClick={props.handleDelete}>Delete user</p>
+          <Link onClick={props.handleDelete} className="link-dash button alert cell small-offset-3 small-6" to={`/users/${props.userInfo.id}/customers/`} replace><p className="delete-tag">Delete user</p></Link>
         </div>
       </div>
     </div>

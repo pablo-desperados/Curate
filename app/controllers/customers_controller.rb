@@ -1,7 +1,6 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user
 
-
   def create
     @new_customer = Customer.new(customer_params)
     if @new_customer.save
