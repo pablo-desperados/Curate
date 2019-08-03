@@ -9,8 +9,12 @@ class CustomerShowTileContainer extends React.Component{
       current_customer: {},
       current_user: {}
     }
+    this.formPayload = this.formPayload.bind(this)
   }
 
+  formPayload(payload){
+    console.log("Hello")
+  }
   componentDidMount(){
     fetch(`/api/v1/users/${this.props.match.params.user_id}/customers/${this.props.match.params.id}`)
     .then((response) => {
@@ -39,7 +43,8 @@ class CustomerShowTileContainer extends React.Component{
           />
       </div>
       <div className="cell auto">
-        <DiaryFormContainer />
+        <DiaryFormContainer
+          formPayload={this.formPayload} />
       </div>
     </div>
   )

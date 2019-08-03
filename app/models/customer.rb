@@ -1,8 +1,9 @@
 class Customer < ApplicationRecord
-
+  
   validates_presence_of :first_name, :last_name, :email, :phone_number
   has_many :relations
   has_many :users, through: :ratings
+  has_many :diaries
 
   mount_uploader :profile_picture, CustomerPhotoUploader
 
