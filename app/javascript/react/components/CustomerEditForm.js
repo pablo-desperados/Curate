@@ -1,10 +1,11 @@
 import React from 'react'
+import CustomersContainer from '../containers/CustomersContainer'
 import {Link} from 'react-router-dom'
 import handlingStatus from '../support/cardTag'
 
 const CustomerEditForm = props =>{
   let image, last_updated, name, title, status, statusclass, company, location, email, phone_number
-
+  debugger
   if (props.information.id !== undefined) {
     image = props.information.profile_picture.url
     last_updated = new Date(props.information.updated_at)
@@ -56,7 +57,7 @@ const CustomerEditForm = props =>{
         </div>
 
         <div className=" cell grid-x grid-margin-x">
-          <Link onClick={props.handleDelete} className="link-dash button alert cell small-offset-3 small-6" to={`/users/${props.userInfo.id}/customers/`} replace><p className="delete-tag">Delete user</p></Link>
+          <div onClick={props.handleDelete} className="link-dash button alert cell small-offset-3 small-6"><p className="delete-tag">Delete user</p></div>
         </div>
       </div>
     </div>

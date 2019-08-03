@@ -1,7 +1,7 @@
 import React from 'react'
-import CustomerCardContainer from './CustomerCardContainer'
 import { Redirect} from "react-router-dom"
-
+import CustomerEditForm from '../components/CustomerEditForm'
+import CustomerCardContainer from './CustomerCardContainer'
 class CustomersContainer extends React.Component{
   constructor(props){
     super(props)
@@ -10,6 +10,28 @@ class CustomersContainer extends React.Component{
       }
     this.fetchUserCustomers = this.fetchUserCustomers.bind(this)
     this.handleCardClick = this.handleCardClick.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
+  }
+
+  handleDelete(event){
+    fetch(`/api/v1/customers/${this.props.customerInfo.id}`,{
+      credentials: 'same-origin',
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+    if (response.ok) {
+      return response.json()
+    } else {
+      let errorMessage = `${response.status} (${response.statusText})`,
+      error = new Error(errorMessage);
+      throw(error)
+    }
+    })
+
   }
 
   handleCardClick(event){
@@ -68,5 +90,4 @@ class CustomersContainer extends React.Component{
 
 
 }
-
 export default CustomersContainer

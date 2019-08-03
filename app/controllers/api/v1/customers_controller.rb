@@ -16,8 +16,8 @@ class Api::V1::CustomersController < ApiController
     @customer = Customer.find(params[:id])
     if @customer.id == params[:id].to_i
       @customer.destroy
+      @customers = Customer.all
       render json: current_user
-
     end
   end
 
