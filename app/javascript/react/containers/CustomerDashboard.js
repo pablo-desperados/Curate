@@ -1,6 +1,7 @@
 import React from 'react'
+import {Redirect, BrowserRouter} from 'react-router-dom'
 import CustomerEditForm from '../components/CustomerEditForm'
-
+import CustomersContainer from './CustomersContainer'
 class CustomerDashboard extends React.Component{
   constructor(props){
   super(props)
@@ -25,6 +26,9 @@ class CustomerDashboard extends React.Component{
       error = new Error(errorMessage);
       throw(error)
     }
+    })
+    .then(response=>{
+      location.pathname= `users/${response.id}/customers`
     })
 
   }

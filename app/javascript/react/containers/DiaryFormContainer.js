@@ -61,5 +61,4 @@ class DiaryFormContainer extends React.Component{
     )
   }
 }
-
 export default DiaryFormContainer
