@@ -51,6 +51,7 @@ gem 'database_cleaner', group: [:development, :test]
 gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
+gem "font-awesome-rails"
 gem "fog-aws"
 gem "fog"
 gem "animate-rails"
