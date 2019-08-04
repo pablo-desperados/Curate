@@ -68,3 +68,18 @@
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07)
   darken(#341cac, 10%);
 }
+
+.grid-customer-index{
+  margin: 0 auto;
+   justify-content: center;
+}
+
+.grid-index-title{
+  text-align: center;
+  h1{
+    color: #33475b;
+  }
+  h3{
+    color: #33475b;
+  }
+}

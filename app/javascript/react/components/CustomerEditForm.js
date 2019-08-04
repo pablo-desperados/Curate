@@ -5,7 +5,7 @@ import handlingStatus from '../support/cardTag'
 
 const CustomerEditForm = props =>{
   let image, last_updated, name, title, status, statusclass, company, location, email, phone_number
-  debugger
+
   if (props.information.id !== undefined) {
     image = props.information.profile_picture.url
     last_updated = new Date(props.information.updated_at)
@@ -30,8 +30,8 @@ const CustomerEditForm = props =>{
             <p className="diary-updated">Last Updated: {last_updated}</p>
           </div>
           <div className="cell diary-name">
-            <h1>{name}</h1>
-            <h3 className="diary-title ">{title}</h3>
+            <h3>{name}</h3>
+            <h4 className="diary-title ">{title}</h4>
           </div>
       </div>
       <div className="callout grid-y form-container">

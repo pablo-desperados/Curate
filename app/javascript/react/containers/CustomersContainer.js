@@ -79,10 +79,21 @@ class CustomersContainer extends React.Component{
       )
     })
     return(
-      <div className="grid-container">
-        <div className="grid-x">
-        {customers}
+      <div className="grid-x">
+        <div className="grid-container grid-index-title animated fadeInDown">
+          <div className="grid-x">
+            <h1 className="cell auto">Your Contacts</h1>
+          </div>
+          <div className="grid-x ">
+            <h3 className="cell auto">Select a tile to access a customer's diary</h3>
+          </div>
         </div>
+
+        <div className="cell grid-x grid-container grid-customer-index">
+            {customers}
+        </div>
+
+
       </div>
     )
   }

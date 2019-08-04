@@ -29,11 +29,11 @@ class DiaryFormContainer extends React.Component{
   render(){
     return(
       <div className="grid-x">
-        <div className="cell auto ">
+        <div className="cell small-offset-3 small-6 ">
           <div className="grid-y grid-container diary-input-container">
             <div className="grid-x">
               <div className="cell auto">
-                <h3>Log a new interaction</h3>
+                <h4>Log a new interaction</h4>
               </div>
             </div>
             <form onSubmit={this.handleSubmit}>
@@ -42,13 +42,13 @@ class DiaryFormContainer extends React.Component{
                   <input name="title" id="diary-input" value={this.state.title} type="text" placeholder="Enter a title..." onChange={this.handleChange}></input>
                 </label>
 
-                <div className="grid-x grid-margin-x">
-                  <div className="cell small-10">
+                <div className="grid-x">
+                  <div className="cell small-9">
                     <label className="label-text">Body
-                      <textarea name="body" id="diary-input" value={this.state.body} placeholder="Write your customer interactions here!" onChange={this.handleChange} />
+                      <input name="body" id="diary-input" value={this.state.body} type="text" placeholder="Write your customer interactions here!" onChange={this.handleChange} />
                     </label>
                   </div>
-                  <div className="cell small-2">
+                  <div className="cell small-offset-1 small-1">
                     <input className="button diary-action-button" type="submit" value="Submit" />
                   </div>
                 </div>

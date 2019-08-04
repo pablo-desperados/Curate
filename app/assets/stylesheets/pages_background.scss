@@ -1,10 +1,13 @@
+@import 'nav';
 $sub-color: #f4f4f5;
- $main-color: #EAEEF2;
+$main-color: #EAEEF2;
 
 
 .authorization{
   box-shadow: 2px 2px 18px 1px #7076892b;
   background: $sub-color;
+  padding-bottom: 200px;
+  overflow-y: scroll;
   height: 100%;
 }
 
@@ -24,8 +27,25 @@ $sub-color: #f4f4f5;
   @media screen and (max-width: 640px){
     padding-top: 20px;
   }
-}
 
+}
+.customer-add{
+  padding-bottom: 100px;
+
+  .add-customer-button{
+    background: $accent;
+    border-radius: 25px;
+    font-size: 1.20em;
+    margin-top: 18px;
+    margin-top: 30px;
+    font-weight: bold;
+    &:hover{
+      background: white ;
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+}
 .customer-index{
   background: $sub-color;
   -webkit-box-shadow: inset 0px 0px 15px -6px #7f7979a1;

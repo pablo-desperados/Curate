@@ -17,7 +17,7 @@ const CustomerCardContainer=(props)=>{
 
 
   return(
-    <div className="card grid-y click-function" onClick={()=>{props.handleCardClick(props.id)}}>
+    <div className="card grid-y click-function animated " onClick={()=>{props.handleCardClick(props.id)}}>
         <div className="cell small-5">
           <img className="card-picture" src={profile_picture}></img>
         </div>
@@ -33,7 +33,7 @@ const CustomerCardContainer=(props)=>{
             </div>
             <div className=" cell info-tag grid-x grid-padding-x">
               <p className="cell small-4">Company:</p>
-              <div className='cell auto'>
+              <div className='cell small-offset-2 auto'>
                   <p>{company}</p>
               </div>
             </div>
