@@ -3,11 +3,11 @@
 .callout-diary-creation{
   min-width: 350px;
   max-width: 600px;
-  max-height: 800px;
+  max-height: 400px;
   background: white;
   border-color: grey 1px;
   font-family: 'Roboto';
-  color: #33475b;
+
 
 }
 
@@ -15,25 +15,22 @@
   background: #328b81;
   border-radius: 10px;
   box-shadow:0 2px 10px rgba(0,0,0,.2);
-  height: 200px;
   padding-top: 5px;
-  min-width: 800px;
-}
-
-#diary-input{
-
+  min-width: 500px;
+  padding-right: 16px;
 }
 
 .form-container{
+  border-style: solid 5px grey;
+  color: #33475b;
   border-top: transparent;
-  margin-bottom: 0;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+
 
   p{
     font-weight: bold;
-  }
-
-  label{
-    font-size: 30px !important;
+    font-size: 11px;
   }
 
 }
@@ -55,6 +52,7 @@
 
 .diary-updated{
   font-weight: bold;
+  font-size: 9px;
 }
 .diary-name{
   margin-top: 20px;
@@ -77,10 +75,11 @@
 .diary-input-container{
   font-family: 'Roboto';
   color: #33475b;
+  margin-top: 8px;
 }
 
 .label-text{
-  font-size: 20px;
+  font-size: 12px;
   color: white;
   font-weight: bold;
 }
@@ -88,12 +87,18 @@
 .diary-action-button{
   background: $accent;
   border-radius: 25px;
-  font-size: 1.20em;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  font-size: 0.70em;
+  margin-top: 10px;
+  margin-top: 30px;
+
   &:hover{
-    background: transparent;
+    background: white ;
     border-color: $accent;
     color: $accent;
   }
+}
+
+#diary-input{
+  border-radius: 8px;
+
 }

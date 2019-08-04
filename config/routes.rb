@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root :to => redirect("/mainpage")
 
-  
+
   resources :mainpage, only: [:index]
   devise_for :users
 
@@ -15,7 +15,9 @@ Rails.application.routes.draw do
       resources :users, only: [:show] do
         resources :customers, only: [:index, :show]
       end
-        resources :customers, only: [:destroy]
+        resources :customers, only: [:destroy] do
+          resources :diaries, only: [:create]
+        end
     end
   end
 

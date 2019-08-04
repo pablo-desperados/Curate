@@ -1,4 +1,4 @@
-<div class="grid-container form-container-main">
+<div class="grid-container form-container-main customer-add">
   <div class="grid-x" >
     <div class="customer-form">
       <%= form_for [current_user, @customer] do |form| %>
@@ -50,7 +50,7 @@
         </li>
       </ul>
       <div class="actions">
-        <%= form.submit class: "customer-button button"%>
+        <%= form.submit class: "add-customer-button button"%>
       </div>
       <% end %>
     </div>
