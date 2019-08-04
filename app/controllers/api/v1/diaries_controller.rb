@@ -5,11 +5,11 @@ class Api::V1::DiariesController < ApiController
     @diary = Diary.new(diary_params)
     @customer = Customer.find(params[:customer_id])
     @diary.customer = @customer
-
+    @diary.user = current_user
     if @diary.save
-      render json: @customer.diaries
+      @diaries = Customer.findusers(@customer.diaries)
+      render json: @diaries
     end
-
   end
 
 

@@ -9,7 +9,8 @@ class Api::V1::CustomersController < ApiController
   def show
     @customer = Customer.find(params[:id])
     @user_info = current_user
-    render json: {customer:@customer, user: @user_info}
+    @diaries = Customer.findusers(@customer.diaries)
+    render json: {customer:@customer, user: @user_info, diaries: @diaries}
   end
 
   def destroy

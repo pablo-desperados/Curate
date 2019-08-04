@@ -12,6 +12,7 @@
  *
  *= require foundation_and_overrides
  *= require animate
+ *= require font-awesome
  *= require_tree .
  *= require_self
 

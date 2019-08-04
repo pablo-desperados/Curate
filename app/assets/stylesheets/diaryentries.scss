@@ -1,10 +1,12 @@
+@import 'nav';
+
 .diary-entries-container{
   margin-top: 50px;
 
-  width:auto;
+  width: 100% auto;
+  min-width: 700px;
   margin-bottom:25px;
-  height: 100%;
-
+  overflow-y: auto visible;
 
 }
 
@@ -13,4 +15,59 @@
   font-size: 2em;
   text-align: center;
   font-family: 'Roboto';
+}
+
+.messages-container{
+  border-radius: 10px;
+
+}
+
+.comment{
+  height: 100px;
+  padding-top: 5px;
+  color: #33475b;
+  border-radius: 10px;
+  .text{
+    text-align: left;
+    padding:0;
+
+  }
+  .text-title{
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+  }
+  .text-body{
+    padding-left: 50px;
+    font-size: 18px;
+    overflow-x: scroll;
+  }
+
+}
+.pin-tag{
+  height: 40px;
+  font-size: 13px;
+  &:hover{
+    zoom: 1.1;
+  }
+
+
+}
+.tack{
+  color: $accent;
+
+}
+
+.text-tag{
+  background: #e1ecf4;
+  overflow-x: scroll;
+  font-size: 12px;
+  height: 100%;
+  margin-bottom: 0;
+  width: 100%;
+  margin-left: 10px;
+  padding: 0;
+  border: solid 1px black;
 }

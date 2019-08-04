@@ -16,7 +16,8 @@ class CustomerShowTileContainer extends React.Component{
   }
 
   formPayload(payload){
-    fetch(`/api/v1/customers/${this.state.current_customer.id}/diaries`,{
+    payload["user"] = this.state.current_user
+    fetch(`/api/v1/customers/${this.props.match.params.id}/diaries`,{
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(payload),
@@ -52,7 +53,7 @@ class CustomerShowTileContainer extends React.Component{
     }
     })
     .then((response=>{
-      this.setState({current_customer: response.customer, current_user: response.user})
+      this.setState({current_customer: response.customer, current_user: response.user, diary: response.diaries})
     }))
 
   }
@@ -62,10 +63,20 @@ class CustomerShowTileContainer extends React.Component{
     if (this.state.diary.length === 0) {
        entrypage = <EmptyDiaryEntriesComponent/>
     }else {
-     entrypage = <DiaryEntriesContainer/>
+     entrypage = this.state.diary.reverse().map((entry) =>{
+         return(
+           <DiaryEntriesComponent
+             key={entry.diary.id}
+             information={entry.diary}
+             user={entry.user}
+            />
+         )
+     })
+
+
     }
     return(
-    <div className="customer-show grid-x">
+    <div className="customer-show grid-x messages-container">
       <div className=" cell small-3 callout-diary-creation">
         <CustomerDashboard
           customerInfo={this.state.current_customer}
@@ -73,10 +84,10 @@ class CustomerShowTileContainer extends React.Component{
           handleReload={this.handleReload}
           />
       </div>
-      <div className="cell auto grid-container">
+      <div className="cell auto grid-container ">
         <DiaryFormContainer
           formPayload={this.formPayload} />
-        <div className="diary-entries-container cell auto">
+        <div className="diary-entries-container grid-container cell ">
           {entrypage}
         </div>
       </div>

@@ -32,9 +32,8 @@ class DiaryFormContainer extends React.Component{
         <div className="cell small-offset-3 small-6 ">
           <div className="grid-y grid-container diary-input-container">
             <div className="grid-x">
-              <div className="cell auto">
                 <h4>Log a new interaction</h4>
-              </div>
+
             </div>
             <form onSubmit={this.handleSubmit}>
               <div className="cell callout callout-diary-input diary-form">
@@ -45,7 +44,7 @@ class DiaryFormContainer extends React.Component{
                 <div className="grid-x">
                   <div className="cell small-9">
                     <label className="label-text">Body
-                      <input name="body" id="diary-input" value={this.state.body} type="text" placeholder="Write your customer interactions here!" onChange={this.handleChange} />
+                      <textarea name="body" id="diary-input" value={this.state.body} type="text" placeholder="Write your customer interactions here!" onChange={this.handleChange} />
                     </label>
                   </div>
                   <div className="cell small-offset-1 small-1">

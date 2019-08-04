@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :relations
+  has_many :diaries
   has_many :customers , through: :relations
 
 
