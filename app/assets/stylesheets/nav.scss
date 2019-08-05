@@ -85,10 +85,22 @@ $accent: #1ac74f;
 
 .callout .error-title{
   color: #ce4c4c;
+
+}
+
+#welcome-sign-secondary{
+  color: white;
+  margin-top: 5px;
 }
 
 .welcome-sign{
-  height: auto;
+  margin-top: 6px;
+  color: grey;
+  text-decoration: none;
+  &:hover{
+    border-bottom: none;
+    font-weight: normal;
+  }
 }
 .sticky-container{
   background-color: $sub-color;

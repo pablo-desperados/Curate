@@ -20,12 +20,17 @@ class Api::V1::DiariesController < ApiController
       @past_favorite.favorite = false
       @past_favorite.save
     end
-
     @diary_to_update.favorite= true
-
     if @diary_to_update.save
       render json: @diary_to_update
     end
+  end
+
+  def destroy
+     @diary_to_destroy = Diary.find( params[:diary][:id])
+     @diary_to_destroy.destroy
+     @remaining_diaries = Customer.findusers(Customer.find(params[:current_customer]).diaries)
+     render json:  @remaining_diaries
 
   end
 

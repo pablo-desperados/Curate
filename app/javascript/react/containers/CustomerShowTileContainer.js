@@ -15,9 +15,36 @@ class CustomerShowTileContainer extends React.Component{
     }
     this.formPayload = this.formPayload.bind(this)
     this.handlePinClick = this.handlePinClick.bind(this)
-
+    this.handleDeleteClick = this.handleDeleteClick.bind(this)
   }
 
+  handleDeleteClick(event){
+    event["current_customer"] = this.state.current_customer.id
+    fetch(`/api/v1/customers/${this.state.current_user.id}/diaries/${event}`,{
+      credentials: 'same-origin',
+      method: 'DELETE',
+      body: JSON.stringify(event),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response)=>{
+      if (response.ok) {
+        return response.json()
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error)
+      }
+    })
+    .then((responseBody)=>{
+      debugger
+      this.setState({diary: responseBody })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+
+  }
   handlePinClick(event){
     fetch(`/api/v1/customers/${this.state.current_customer.id}/diaries/${event.id}`,{
       credentials: 'same-origin',
@@ -64,7 +91,7 @@ class CustomerShowTileContainer extends React.Component{
       }
     })
     .then((responseBody)=>{
-      this.setState({ diary: responseBody})
+      this.setState({ diary :responseBody})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -98,6 +125,7 @@ class CustomerShowTileContainer extends React.Component{
              information={entry.diary}
              user={entry.user}
              handlePinClick={this.handlePinClick}
+             handleDeleteClick={this.handleDeleteClick}
             />
          )
      })
@@ -111,7 +139,6 @@ class CustomerShowTileContainer extends React.Component{
           customerInfo={this.state.current_customer}
           currentUser={this.state.current_user}
           handleReload={this.handleReload}
-          handlePinClick={this.handlePinClick}
           selectedDiary ={this.state.selectedDiary}
           />
       </div>

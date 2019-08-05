@@ -20,9 +20,7 @@
         <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
         <li ><%= link_to 'SIGN IN', new_user_session_path, class: "nav-button" %></li>
       <%- end -%>
-      <%- if current_user -%>
-      <li class="welcome-sign"><%= link_to "Welcome #{current_user.first_name}" %> </li>
-      <%- end -%>
+      <p class="welcome-sign"> <%= "Welcome #{current_user.first_name}"%> </p>
     </ul>
   </div>
 </div>
