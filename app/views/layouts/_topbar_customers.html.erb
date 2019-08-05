@@ -12,13 +12,12 @@
         <a class="nav-button" href="#">ABOUT</a>
       </li>
       <%- if current_user -%>
-      <li ></li>
         <li ><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "nav-button" %></li>
       <%- else -%>
         <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
         <li ><%= link_to 'SIGN IN', new_user_session_path, class: "nav-button" %></li>
+        
       <%- end -%>
-        <p id="welcome-sign-secondary"> <%= "Welcome #{current_user.first_name}"%> </p>
     </ul>
   </div>
 </div>
