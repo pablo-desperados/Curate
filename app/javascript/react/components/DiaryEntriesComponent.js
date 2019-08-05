@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbtack,  faMinusCircle} from '@fortawesome/free-solid-svg-icons'
 
 const DiaryEntriesComponent = props =>{
-  let title = props.information.title
-  let body = props.information.body
-  let date = new Date(props.information.created_at)
-  let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+  let title, body, date, full_date
+  if (props.information.id !== undefined) {
+     title = props.information.title
+     body = props.information.body
+     date = new Date(props.information.created_at)
+     full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+   }
   const element = <div onClick={()=>{props.handlePinClick({title: title, body:body, id: props.information.id})}} className="pin-tag"><FontAwesomeIcon icon={faThumbtack} className="tack"/> Pin this entry</div>
   const deletesign = <div className="pin-tag"><FontAwesomeIcon icon={faMinusCircle} className="delete"/> delete</div>
   return(
