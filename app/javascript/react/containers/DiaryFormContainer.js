@@ -5,7 +5,8 @@ class DiaryFormContainer extends React.Component{
     super(props)
     this.state={
       title: "",
-      body: ""
+      body: "",
+      error: ""
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -17,8 +18,12 @@ class DiaryFormContainer extends React.Component{
       title: this.state.title,
       body: this.state.body
     }
-    this.props.formPayload(payload)
-    this.setState({title: "", body: ""})
+    if (payload.title.trim().length < 1 || payload.title.trim().length < 1) {
+      this.setState({error: "field is missing"})
+    }else{
+      this.props.formPayload(payload)
+      this.setState({title: "", body: ""})
+    }
   }
 
   handleChange(event){
@@ -27,6 +32,10 @@ class DiaryFormContainer extends React.Component{
   }
 
   render(){
+    let errordiv = ""
+    if (this.state.error.trim().length > 1) {
+      errordiv= <div className="errordiv callout alert"> <h3>There was an error with your submission, try again.</h3></div>
+    }
     return(
       <div className="grid-x">
         <div className="cell small-offset-3 small-6 ">
@@ -54,6 +63,7 @@ class DiaryFormContainer extends React.Component{
               </div>
 
             </form>
+            {errordiv}
           </div>
         </div>
       </div>
