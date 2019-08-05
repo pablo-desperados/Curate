@@ -11,7 +11,7 @@ const DiaryEntriesComponent = props =>{
      full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
    }
   const element = <div onClick={()=>{props.handlePinClick({title: title, body:body, id: props.information.id})}} className="pin-tag"><FontAwesomeIcon icon={faThumbtack} className="tack"/> Pin this entry</div>
-  const deletesign = <div className="pin-tag"><FontAwesomeIcon icon={faMinusCircle} className="delete"/> delete</div>
+  const deletesign = <div  onClick={()=>{props.handleDeleteClick({ id: props.information.id})}} className="pin-tag"><FontAwesomeIcon icon={faMinusCircle} className="delete"/> delete</div>
   return(
       <div className="grid-container messages-container">
         <div className="grid-y callout comment">

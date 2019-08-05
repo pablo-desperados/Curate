@@ -25,7 +25,6 @@ feature 'user registers', %Q{
 
     expect(page).to have_content('SIGN OUT')
     expect(page).to have_content('Create a story')
-    expect(page).to have_content('Welcome PABLO')
 
   end
 end
