@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import handlingStatus from '../support/cardTag'
 
 const CustomerEditForm = props =>{
+
   let image, last_updated, name, title, status, statusclass, company, location, email, phone_number
   if (props.information.id !== undefined) {
     image = props.information.profile_picture.url
@@ -20,9 +21,12 @@ const CustomerEditForm = props =>{
   }
 
   let minititle, minibody
-  if(props.selectedDiary.title !== undefined){
+  if(props.selectedDiary){
     minititle = props.selectedDiary.title
     minibody = props.selectedDiary.body
+  }else {
+    minititle= "Select a log to pin here!"
+    minibody= ""
   }
 
   return(
