@@ -10,7 +10,8 @@ class Api::V1::CustomersController < ApiController
     @customer = Customer.find(params[:id])
     @user_info = current_user
     @diaries = Customer.findusers(@customer.diaries)
-    render json: {customer:@customer, user: @user_info, diaries: @diaries}
+    @selected_diary = @customer.diaries.find_by favorite: true
+    render json: {customer:@customer, user: @user_info, diaries: @diaries, selected: @selected_diary}
   end
 
   def destroy

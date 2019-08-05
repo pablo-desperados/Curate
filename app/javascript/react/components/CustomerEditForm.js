@@ -5,7 +5,6 @@ import handlingStatus from '../support/cardTag'
 
 const CustomerEditForm = props =>{
   let image, last_updated, name, title, status, statusclass, company, location, email, phone_number
-
   if (props.information.id !== undefined) {
     image = props.information.profile_picture.url
     last_updated = new Date(props.information.updated_at)
@@ -20,13 +19,19 @@ const CustomerEditForm = props =>{
     phone_number = props.information.phone_number
   }
 
+  let minititle, minibody
+  if(props.selectedDiary.title !== undefined){
+    minititle = props.selectedDiary.title
+    minibody = props.selectedDiary.body
+  }
+
   return(
     <div>
-      <div className="grid-x grid-margin-x callout form-container">
+      <div className="grid-x grid-margin-x form-container" id="hello">
           <div className="cell small-8 callout callout-image-form">
             <img className="form-image" src={image}></img>
           </div>
-          <div className="cell auto">
+          <div className="cell auto diary-updated-border">
             <p className="diary-updated">Last Updated: {last_updated}</p>
           </div>
           <div className="cell diary-name">
@@ -58,6 +63,18 @@ const CustomerEditForm = props =>{
 
         <div className=" cell grid-x grid-margin-x">
           <div onClick={props.handleDelete} className="link-dash button alert cell small-offset-3 small-6"><p className="delete-tag">Delete user</p></div>
+        </div>
+      </div>
+      <div className="callout grid-y form-container">
+
+        <div className="cell grid-x grid-margin-x">
+          <h5 className="grid-container">Pinned log</h5>
+        </div>
+        <div className="callout mini-comment grid-container ">
+          <div className="grid-x">
+            <h4 className="cell minititle small-12">{minititle}</h4>
+            <p className="cell minibody small-12">{minibody}</p>
+          </div>
         </div>
       </div>
     </div>

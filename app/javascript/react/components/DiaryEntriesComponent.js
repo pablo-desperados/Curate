@@ -1,14 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbtack } from '@fortawesome/free-solid-svg-icons'
+import { faThumbtack,  faMinusCircle} from '@fortawesome/free-solid-svg-icons'
 
 const DiaryEntriesComponent = props =>{
   let title = props.information.title
   let body = props.information.body
   let date = new Date(props.information.created_at)
   let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
-
-  const element = <div className="pin-tag"><FontAwesomeIcon icon={faThumbtack} className="tack"/> Pin this entry</div>
+  const element = <div onClick={()=>{props.handlePinClick({title: title, body:body, id: props.information.id})}} className="pin-tag"><FontAwesomeIcon icon={faThumbtack} className="tack"/> Pin this entry</div>
+  const deletesign = <div className="pin-tag"><FontAwesomeIcon icon={faMinusCircle} className="delete"/> delete</div>
   return(
       <div className="grid-container messages-container">
         <div className="grid-y callout comment">
@@ -17,6 +17,9 @@ const DiaryEntriesComponent = props =>{
               <p className="cell small-9">{title}</p>
               <div className="cell auto ">
                 {element}
+              </div>
+              <div className="cell auto">
+                {deletesign}
               </div>
             </div>
             <div className="grid-x grid-padding-x">

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         resources :customers, only: [:index, :show]
       end
         resources :customers, only: [:destroy] do
-          resources :diaries, only: [:create]
+          resources :diaries, only: [:create, :update, :delete]
         end
     end
   end

@@ -10,9 +10,37 @@ class CustomerShowTileContainer extends React.Component{
     this.state={
       current_customer: {},
       current_user: {},
-      diary: []
+      diary: [],
+      selectedDiary:{}
     }
     this.formPayload = this.formPayload.bind(this)
+    this.handlePinClick = this.handlePinClick.bind(this)
+
+  }
+
+  handlePinClick(event){
+    fetch(`/api/v1/customers/${this.state.current_customer.id}/diaries/${event.id}`,{
+      credentials: 'same-origin',
+      method: 'PATCH',
+      body: JSON.stringify(event),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response)=>{
+      if (response.ok) {
+        return response.json()
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error)
+      }
+    })
+    .then((responseBody)=>{
+      this.setState({selectedDiary: responseBody})
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   formPayload(payload){
@@ -53,7 +81,7 @@ class CustomerShowTileContainer extends React.Component{
     }
     })
     .then((response=>{
-      this.setState({current_customer: response.customer, current_user: response.user, diary: response.diaries})
+      this.setState({current_customer: response.customer, current_user: response.user, diary: response.diaries, selectedDiary: response.selected})
     }))
 
   }
@@ -63,12 +91,13 @@ class CustomerShowTileContainer extends React.Component{
     if (this.state.diary.length === 0) {
        entrypage = <EmptyDiaryEntriesComponent/>
     }else {
-     entrypage = this.state.diary.reverse().map((entry) =>{
+     entrypage = this.state.diary.map((entry) =>{
          return(
            <DiaryEntriesComponent
              key={entry.diary.id}
              information={entry.diary}
              user={entry.user}
+             handlePinClick={this.handlePinClick}
             />
          )
      })
@@ -77,11 +106,13 @@ class CustomerShowTileContainer extends React.Component{
     }
     return(
     <div className="customer-show grid-x messages-container">
-      <div className=" cell small-3 callout-diary-creation">
+      <div className="cell small-3 callout-diary-creatio grid-y" >
         <CustomerDashboard
           customerInfo={this.state.current_customer}
           currentUser={this.state.current_user}
           handleReload={this.handleReload}
+          handlePinClick={this.handlePinClick}
+          selectedDiary ={this.state.selectedDiary}
           />
       </div>
       <div className="cell auto grid-container ">
