@@ -35,12 +35,13 @@ class CustomerDashboard extends React.Component{
 
   render(){
     return(
-      <div>
-        <div className="form-container ">
+      <div className="cell auto dashboard-container">
+        <div >
           <CustomerEditForm
             information={this.props.customerInfo}
             handleDelete={this.handleDelete}
             userInfo={this.props.currentUser}
+            selectedDiary={this.props.selectedDiary}
             />
         </div>
 

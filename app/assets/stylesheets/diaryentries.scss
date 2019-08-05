@@ -2,11 +2,10 @@
 
 .diary-entries-container{
   margin-top: 50px;
-
   width: 100% auto;
   min-width: 700px;
   margin-bottom:25px;
-  overflow-y: auto visible;
+  height: 100%;
 
 }
 
@@ -27,6 +26,7 @@
   padding-top: 5px;
   color: #33475b;
   border-radius: 10px;
+  overflow-y: scroll;
   .text{
     text-align: left;
     padding:0;
@@ -37,12 +37,14 @@
     font-size: 22px;
     margin-top: 0px;
     margin-bottom: 10px;
-
+    overflow-x: block;
+    overflow-y: hidden;
+    word-wrap:break-word;
   }
   .text-body{
     padding-left: 50px;
     font-size: 18px;
-    overflow-x: scroll;
+    word-wrap: break-word;
   }
 
 }
@@ -57,12 +59,15 @@
 }
 .tack{
   color: $accent;
+}
 
+.delete{
+  color: red;
 }
 
 .text-tag{
   background: #e1ecf4;
-  overflow-x: scroll;
+  overflow-x: hidden;
   font-size: 12px;
   height: 100%;
   margin-bottom: 0;
@@ -70,4 +75,5 @@
   margin-left: 10px;
   padding: 0;
   border: solid 1px black;
+
 }
