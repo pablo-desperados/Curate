@@ -7,8 +7,8 @@ class CustomersController < ApplicationController
       Relation.create(user: current_user, customer: @new_customer)
       redirect_to user_customer_path(current_user, @new_customer)
     else
-      redirect_to user_customers_path(current_user)
-      flash[:notice]="There was an error in your submission"
+      flash[:fail] = @new_customer.errors.full_messages.join(", ")
+      redirect_to  new_user_customer_path(current_user)
     end
   end
 

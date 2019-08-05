@@ -4,21 +4,7 @@
       <div class="cell small-8 ">
         <h2 class="text-center cell">Sign up</h2>
         <div class="callout">
-          <% flash.each do |name, msg| %>
-          <div class="callout alert">
-          <% if msg.class == Array %>
-              <% msg.each do |message| %>
-                  <%= content_tag :div, message, :id => "flash_#{name}" %>
-              <% end %>
-            <% else %>
-
-              <%= content_tag :div, msg,:class =>"error-title", :id => "flash_#{name}" %>
-
-            <% end %>
-          </div>
-          <% end %>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
           <%= render "devise/shared/error_messages", resource: resource %>
           <div class="field">
             <%= f.label :first_name %><br />

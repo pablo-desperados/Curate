@@ -2,9 +2,29 @@
   <div class="grid-x" >
     <div class="customer-form">
       <%= form_for [current_user, @customer] do |form| %>
+      <% flash.each do |name, msg| %>
+      <div class="callout alert">
+        <% msg = msg.split(", ") %>
+        <% if msg.class == Array %>
+        <ul className="customer-add-errors">
+          <h4 class="error-title">
+            <strong>There was an error in your submission:</strong>
+          </h4>
+        <% msg.each do |message| %>
+        <li class="error-title" ><%= message %></li>
+        <% end %>
+        </ul>
+
+        <% else %>
+
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+        <% end %>
+      </div>
+      <% end %>
       <div class="grid-y profile-picture-container">
         <h4 class="customer-form-title cell small-offset-3" >Add New Customer</h4>
-        <%= image_tag "profile-default.png", width:"150", class: "profile-picture", id: "profile-pic" %>
+        <%= image_tag "profile-default.png", width:"100", class: "profile-picture", id: "profile-pic" %>
         <%= form.file_field :profile_picture, class:"picture-submit cell", onChange: "changePicture()" %>
       </div>
       <ul class="accordion accordion-menu-form" data-accordion >
