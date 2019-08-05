@@ -2,6 +2,8 @@ import React from 'react'
 import { Redirect} from "react-router-dom"
 import CustomerEditForm from '../components/CustomerEditForm'
 import CustomerCardContainer from './CustomerCardContainer'
+import EmptyCustomerContainer from '../components/EmptyCustomerContainer'
+
 class CustomersContainer extends React.Component{
   constructor(props){
     super(props)
@@ -61,23 +63,30 @@ class CustomersContainer extends React.Component{
     }
 
   render(){
-    let customers = this.state.customerList.reverse().map(customer=>{
-      let date = new Date(customer.created_at)
-      let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
-      return(
-        <CustomerCardContainer
-        key={customer.id}
-        id={customer.id}
-        handleCardClick={this.handleCardClick}
-        full_date={full_date}
-        first_name={customer.first_name}
-        last_name={customer.last_name}
-        company={customer.company}
-        status={customer.lifecycle_status}
-        profile_picture={customer.profile_picture}
-        />
-      )
-    })
+    let customers
+    if (this.state.customerList.length === 0) {
+      let userId = this.props.match.params.id
+     customers = <EmptyCustomerContainer
+       userId={userId}/>
+   }else {
+      customers = this.state.customerList.reverse().map(customer=>{
+       let date = new Date(customer.created_at)
+       let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+       return(
+         <CustomerCardContainer
+           key={customer.id}
+           id={customer.id}
+           handleCardClick={this.handleCardClick}
+           full_date={full_date}
+           first_name={customer.first_name}
+           last_name={customer.last_name}
+           company={customer.company}
+           status={customer.lifecycle_status}
+           profile_picture={customer.profile_picture}
+           />
+       )
+     })
+   }
     return(
       <div className="grid-x">
         <div className="grid-container grid-index-title animated fadeInDown">
