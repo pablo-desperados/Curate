@@ -3,12 +3,13 @@ import CustomersContainer from '../containers/CustomersContainer'
 import {Link} from 'react-router-dom'
 import handlingStatus from '../support/cardTag'
 import CustomerForm from './CustomerForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser} from '@fortawesome/free-solid-svg-icons'
 
 const CustomerEditForm = props =>{
 
   let image, last_updated, name, title, status, statusclass, company, location, email, phone_number
   if (props.information.id !== undefined) {
-    image = props.information.profile_picture.url
     last_updated = new Date(props.information.updated_at)
     last_updated = `${last_updated.getMonth()+1}/${last_updated.getDate()}/${last_updated.getFullYear()}`
     name = `${props.information.first_name} ${props.information.last_name}`
@@ -19,6 +20,14 @@ const CustomerEditForm = props =>{
     location = props.information.location
     email = props.information.email
     phone_number = props.information.phone_number
+    if (props.information.profile_picture.url !== null) {
+      image = <img className="form-image" src={props.information.profile_picture.url}></img>
+    }else{
+      image =
+      <div className="grid-x ">
+        <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+      </div>
+    }
   }
 
   let minititle, minibody
@@ -34,7 +43,7 @@ const CustomerEditForm = props =>{
     <div>
       <div className="grid-x grid-margin-x form-container">
           <div className="cell small-8 callout callout-image-form">
-            <img className="form-image" src={image}></img>
+            {image}
           </div>
           <div className="cell auto diary-updated-border">
             <p className="diary-updated">Last Updated: {last_updated}</p>

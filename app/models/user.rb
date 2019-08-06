@@ -13,6 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
   def self.find_customer_num(users)
     @complete_info = users.map{|user| {user: user, user_num: user.customers.length}}
   end

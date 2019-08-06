@@ -6,16 +6,24 @@ const UserTile = props =>{
 
   let name = `${props.information.user.first_name} ${props.information.user.last_name}`
   let number = `${props.information.user_num}`
-const picture = <div className="cell small-offset-2 small-10 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+  let image;
+  if (props.information.user.profile_photo.url !== null) {
+    image = <img className="form-image form-image-user" src={props.information.user.profile_photo.url}></img>
+  }else{
+      image =
+    <div className="grid-x ">
+      <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+    </div>
+  }
 
   return(
     <div className="callout cell small-4  click-function grid-container usercardcontainer">
     <div className="cell small-5 grid-container">
-      <div className="grid-x grid-container">
-        {picture}
+      <div className="grid-x ">
+        {image}
       </div>
     </div>
-    <div className="small-7 callout card-body">
+    <div className="small-7 callout card-body card-body-user">
       <div className="grid-y">
 
         <div className=" cell info-tag grid-x grid-padding-x">

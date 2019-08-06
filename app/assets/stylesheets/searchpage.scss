@@ -22,7 +22,13 @@
   height: 325px;
   align-content: center;
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
+  overflow-y: hidden;
+}
 
+.card-body-user{
+  max-height: 100px;
+  overflow-x: scroll;
+  padding: 0;
 }
 
 .user-card-picture{
@@ -32,4 +38,9 @@
 .grid-user-index{
   margin: 0 auto;
   justify-content: center;
+}
+.form-image-user{
+  margin-bottom: 20px;
+  height: 160px;
+  border: solid 1px #0a0a0a40;
 }
