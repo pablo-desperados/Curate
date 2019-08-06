@@ -6,12 +6,16 @@ Rails.application.routes.draw do
   resources :mainpage, only: [:index]
   devise_for :users
 
-  resources :users, only: [:show] do
+  resources :users, only: [:index,:show] do
     resources :customers, only: [:index, :show, :new, :create]
   end
 
   namespace :api do
     namespace :v1 do
+
+      post 'users/search', to: 'users#search'
+      get 'users', to: 'users#index'
+
       resources :users, only: [:show] do
         resources :customers, only: [:index, :show]
       end

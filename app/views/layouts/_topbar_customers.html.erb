@@ -3,7 +3,8 @@
     <ul class="vertical menu medium-horizontal" data-dropdown-menu>
       <li class="menu-text"><%= link_to image_tag("logo-secondary.png", width:"150"), root_path %> </li>
       <li class="dashboard-button"><%= link_to 'DASHBOARD', user_customers_path(current_user),  class: "dashboard-button customer-button button"%> </li>
-      <li class="dashboard-button"><%= link_to 'CREATE CUSTOMER', new_user_customer_path,  class: "dashboard-button customer-button button"%> </li>
+      <li class="dashboard-button"><%= link_to 'CREATE CUSTOMER', new_user_customer_path(current_user),  class: "dashboard-button customer-button button"%> </li>
+      <li class="dashboard-button"><%= link_to 'USER FINDER', users_path,  class: "dashboard-button customer-button button"%> </li>
     </ul>
   </div>
   <div class="top-bar-right grid-container" id= "mobile-menu">
@@ -16,7 +17,6 @@
       <%- else -%>
         <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
         <li ><%= link_to 'SIGN IN', new_user_session_path, class: "nav-button" %></li>
-        
       <%- end -%>
     </ul>
   </div>

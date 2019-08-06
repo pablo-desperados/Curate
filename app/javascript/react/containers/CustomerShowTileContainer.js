@@ -39,7 +39,6 @@ class CustomerShowTileContainer extends React.Component{
       }
     })
     .then((responseBody)=>{
-      debugger
       this.setState({diary: responseBody })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
