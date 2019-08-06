@@ -16,7 +16,7 @@ const CustomerCardContainer=(props)=>{
     }else {
       company = "N/A"
     }
-    debugger
+
     if (props.profile_picture.url !== null) {
       image = <img className="card-picture" src={props.profile_picture.url}></img>
     }else{
