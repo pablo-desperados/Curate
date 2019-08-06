@@ -1,5 +1,4 @@
   let changePicture =(event) =>{
-
     button = document.getElementById('customer_profile_picture')
     var fileReader = new FileReader()
     fileReader.onload = ((event)=>{
