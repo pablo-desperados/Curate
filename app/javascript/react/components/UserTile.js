@@ -31,7 +31,6 @@ const picture = <div className="cell small-offset-2 small-10 fa-7x user-card-pic
     </div>
     </div>
   )
-
 }
 
 

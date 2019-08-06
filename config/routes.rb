@@ -19,9 +19,10 @@ Rails.application.routes.draw do
       resources :users, only: [:show] do
         resources :customers, only: [:index, :show]
       end
-        resources :customers, only: [:destroy] do
-          resources :diaries, only: [:create, :update, :destroy]
-        end
+      resources :customers, only: [:destroy] do
+        resources :diaries, only: [:create, :update, :destroy]
+      end
+
     end
   end
 
