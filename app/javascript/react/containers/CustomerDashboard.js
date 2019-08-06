@@ -9,6 +9,7 @@ class CustomerDashboard extends React.Component{
     }
     this.handleDelete = this.handleDelete.bind(this)
   }
+
   handleDelete(event){
     fetch(`/api/v1/customers/${this.props.customerInfo.id}`,{
       credentials: 'same-origin',
@@ -30,7 +31,6 @@ class CustomerDashboard extends React.Component{
     .then(response=>{
       location.pathname= `users/${response.id}/customers`
     })
-
   }
 
   render(){
@@ -40,6 +40,7 @@ class CustomerDashboard extends React.Component{
           <CustomerEditForm
             information={this.props.customerInfo}
             handleDelete={this.handleDelete}
+            handleEdit={this.handleEdit}
             userInfo={this.props.currentUser}
             selectedDiary={this.props.selectedDiary}
             />

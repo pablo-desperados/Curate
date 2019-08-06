@@ -2,6 +2,7 @@ import React from 'react'
 import CustomersContainer from '../containers/CustomersContainer'
 import {Link} from 'react-router-dom'
 import handlingStatus from '../support/cardTag'
+import CustomerForm from './CustomerForm'
 
 const CustomerEditForm = props =>{
 
@@ -31,7 +32,7 @@ const CustomerEditForm = props =>{
 
   return(
     <div>
-      <div className="grid-x grid-margin-x form-container" id="hello">
+      <div className="grid-x grid-margin-x form-container">
           <div className="cell small-8 callout callout-image-form">
             <img className="form-image" src={image}></img>
           </div>
@@ -65,8 +66,9 @@ const CustomerEditForm = props =>{
           <p className="cell small-offset-1 auto form-subtitle">{location}</p>
         </div>
 
-        <div className=" cell grid-x grid-margin-x">
-          <div onClick={props.handleDelete} className="link-dash button alert cell small-offset-3 small-6"><p className="delete-tag">Delete user</p></div>
+        <div className=" cell grid-x grid-margin-x button-grid">
+          <Link to={`/users/${props.userInfo.id}/customers/${props.information.id}/edit`}><div onClick={props.handleEdit} className="link-dash cell button primary  "><p className="delete-tag">Edit Customer</p></div></Link>
+          <div onClick={props.handleDelete} className="link-dash button small-offset-2 alert"><p className="delete-tag">Delete</p></div>
         </div>
       </div>
       <div className="callout grid-y form-container">

@@ -23,6 +23,14 @@ class Api::V1::CustomersController < ApiController
     end
   end
 
+    def update
+      @customer_to_update = Customer.find(params[:id])
+      @customer_updated = Customer.update_user(@customer_to_update, params[:customer])
+      @customer_to_update.save
+
+      render json: current_user
+    end
+
   private
 
   def authenticate_user

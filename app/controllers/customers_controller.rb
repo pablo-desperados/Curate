@@ -20,6 +20,8 @@ class CustomersController < ApplicationController
     @customer =Customer.find(params[:id])
   end
 
+  private
+
   def authenticate_user
     if !user_signed_in?
       flash[:notice]="You don't have access to this page. Please sign in."
@@ -27,7 +29,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  private
   def customer_params
     params.fetch(:customer, {}).permit(:first_name, :last_name, :email, :lifecycle_status, :phone_number, :title, :company_name, :location, :profile_picture)
   end
