@@ -89,7 +89,7 @@ class CustomersContainer extends React.Component{
    }
     return(
       <div className="grid-x">
-        <div className="grid-container grid-index-title cell animated fadeInDown">
+        <div className="grid-container grid-index-title cell full animated fadeInDown">
           <div className="grid-x">
             <h1 className="cell auto">Your Contacts</h1>
           </div>

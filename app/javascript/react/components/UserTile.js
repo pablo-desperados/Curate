@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
 
 const UserTile = props =>{
-
+  let infoId = props.information.user.id
   let name = `${props.information.user.first_name} ${props.information.user.last_name}`
   let number = `${props.information.user_num}`
   let image;
@@ -15,9 +15,8 @@ const UserTile = props =>{
       <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
     </div>
   }
-
   return(
-    <div className="callout cell small-4  click-function grid-container usercardcontainer">
+    <div className="callout cell small-4  click-function grid-container usercardcontainer" onClick={()=>{props.handleCardClick(infoId)}}>
     <div className="cell small-5 grid-container">
       <div className="grid-x ">
         {image}

@@ -1,4 +1,5 @@
 class Api::V1::CustomersController < ApiController
+  
   before_action :authenticate_user
 
   def index

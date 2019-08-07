@@ -6,7 +6,7 @@ import SearchUsersContainer from '../containers/SearchUsersContainer'
 import CustomerForm from './CustomerForm'
 
 const App = (props) => {
-
+  debugger
   return (
     <BrowserRouter>
         <Switch>
