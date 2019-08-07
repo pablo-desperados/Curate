@@ -25,10 +25,9 @@
   overflow-y: hidden;
 }
 
-.card-body-user{
-  max-height: 100px;
-  overflow-x: scroll;
-  padding: 0;
+
+.card-body-user-customers{
+  padding-bottom: 200px;
 }
 
 .user-card-picture{
@@ -43,4 +42,24 @@
   margin-bottom: 20px;
   height: 160px;
   border: solid 1px #0a0a0a40;
+}
+
+.import-button{
+  background: $accent;
+  p{
+    margin-bottom: 0;
+    color: #2D3E4E;
+  }
+  padding-bottom: 10px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.usersearccard{
+  &:hover{
+
+     .import-button{
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     }
+  }
 }

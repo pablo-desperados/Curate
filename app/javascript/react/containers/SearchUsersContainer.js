@@ -17,26 +17,7 @@ class SearchUsersContainer extends React.Component{
   }
 
   handleCardClick(event){
-    fetch("api/v1/hubspot/",{
-      credentials: 'same-origin',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then((response) => {
-    if (response.ok) {
-      return response.json()
-    } else {
-      let errorMessage = `${response.status} (${response.statusText})`,
-      error = new Error(errorMessage);
-      throw(error)
-    }
-    })
-    .then((response)=>{
-      debugger
-    })
-    // this.props.history.push(`/users/${this.state.current_user.id}/users/${event}`)
+    this.props.history.push(`/users/${event}`)
   }
 
   componentDidMount(){
@@ -79,7 +60,6 @@ class SearchUsersContainer extends React.Component{
             handlepayload={this.handlepayload}/>
         </div>
       </div>
-      <a href="https://app.hubspot.com/oauth/authorize?scope=contacts&redirect_uri=https://curate-io.herokuapp.com/mainpage&client_id=d67d1212-e949-4316-bd76-059051d30bf3">rjviu</a>
       <div className="grid-x grid-margin-x grid-user-index">
         {users}
       </div>

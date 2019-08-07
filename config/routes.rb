@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "user/view", to: "users#show"
 
   resources :users, only: [:index, :show] do
-    resources :users, only: []
     resources :customers, only: [:index, :show, :new, :create, :edit]
   end
 
@@ -18,7 +17,7 @@ Rails.application.routes.draw do
       post 'users/search', to: 'users#search'
       get 'users', to: 'users#index'
       resources :users, only: [:show] do
-        resources :customers, only: [:index, :show, :edit]
+        resources :customers, only: [:index, :show, :edit, :create]
       end
       resources :customers, only: [:destroy, :show, :update] do
         resources :diaries, only: [:create, :update, :destroy]

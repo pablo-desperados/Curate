@@ -7,10 +7,19 @@ class Api::V1::UsersController < ApiController
     render json: @searched_users
   end
 
+
+
+  def show
+    @user = User.find(params[:id])
+    @customers = @user.customers
+    render json: {customers: @customers, user: @user, current_user: current_user}
+  end
+
   def index
     @complete_info = User.find_customer_num(User.all)
     @all_users = @complete_info.keep_if{|user| user[:user].id != current_user.id}
     render json: {users: @complete_info, current_user: current_user}
   end
+
 
 end

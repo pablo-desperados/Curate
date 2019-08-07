@@ -5,7 +5,7 @@
       <%- if current_user -%>
       <li class="dashboard-button"><%= link_to 'DASHBOARD', user_customers_path(current_user),  class: "dashboard-button customer-button button"%> </li>
       <li class="dashboard-button"><%= link_to 'CREATE CUSTOMER', new_user_customer_path(current_user),  class: "dashboard-button customer-button button"%> </li>
-      <li class="dashboard-button"><%= link_to 'USER FINDER', users_path,  class: "dashboard-button customer-button button"%> </li>
+      <li class="dashboard-button"><%= link_to 'FIND USERS', users_path,  class: "dashboard-button customer-button button"%> </li>
       <%- end -%>
     </ul>
   </div>

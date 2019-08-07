@@ -72,6 +72,7 @@ class CustomersContainer extends React.Component{
       customers = this.state.customerList.reverse().map(customer=>{
        let date = new Date(customer.created_at)
        let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+
        return(
          <CustomerCardContainer
            key={customer.id}

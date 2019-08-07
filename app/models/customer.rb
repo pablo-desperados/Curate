@@ -22,8 +22,15 @@ class Customer < ApplicationRecord
     customer.location = payload[:location]
     return customer
   end
+
   def self.lifecycle_status
     @status = ["Not contacted", "Contacted", "New lead","Current customer","Disqualified", "Champion"]
+  end
+
+  def self.last_relation(customer)
+    if  Relation.where(customer_id: customer.id).length == 0
+        Customer.find(customer.id).destroy
+    end
   end
 
 end
