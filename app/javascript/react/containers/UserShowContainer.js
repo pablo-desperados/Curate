@@ -8,7 +8,8 @@ class UserShowContainer extends React.Component{
     this.state={
       customerList: [],
       chosenUser: {},
-      currentUser: {}
+      currentUser: {},
+      errorMessage: ""
     }
     this.handleCardClick = this.handleCardClick.bind(this)
   }
@@ -36,7 +37,7 @@ class UserShowContainer extends React.Component{
       if (responseBody.warning !== undefined) {
         alert("You already have this customer in your dashboard")
       }else{
-         this.props.history.push(`/users/${responseBody.id}/customers`)
+        this.setState({errorMessage: "thanks"})
       }
     })
 
@@ -88,14 +89,24 @@ class UserShowContainer extends React.Component{
        )
      })
    }
+
+   let messagesDiv;
+
+   if (this.state.errorMessage.length > 0) {
+     messagesDiv = <div className="callout cell success"><h4>The user was successfully imported</h4></div>
+   }else{
+     messagesDiv =""
+   }
     return(
       <div className="grid-x">
         <div className="grid-container grid-index-title cell full animated fadeInDown">
           <div className="grid-x">
             <h1 className="cell auto">{name}&#39;s Contacts</h1>
+
           </div>
           <div className="grid-x ">
             <h3 className="cell">Select a customer tile to import their profile into your dashboard</h3>
+            {messagesDiv}
           </div>
         </div>
 

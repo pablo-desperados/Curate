@@ -11,6 +11,7 @@ const CustomerCardContainer=(props)=>{
     let statusClass = handlingStatus(props.status)
     let status= props.status
     let company;
+
     if (props.company != undefined) {
       company = props.company
     }else {

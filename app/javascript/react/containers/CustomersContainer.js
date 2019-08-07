@@ -81,7 +81,7 @@ class CustomersContainer extends React.Component{
            full_date={full_date}
            first_name={customer.first_name}
            last_name={customer.last_name}
-           company={customer.company}
+           company={customer.company_name}
            status={customer.lifecycle_status}
            profile_picture={customer.profile_picture}
            />
