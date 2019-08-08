@@ -3,7 +3,7 @@ import handlingStatus from '../support/cardTag'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser} from '@fortawesome/free-solid-svg-icons'
 
-const CustomerCardContainer=(props)=>{
+const CustomerCardUserContainer=(props)=>{
     let image
     let date = props.full_date
     let first_name = props.first_name
@@ -11,7 +11,6 @@ const CustomerCardContainer=(props)=>{
     let statusClass = handlingStatus(props.status)
     let status= props.status
     let company;
-
     if (props.company != undefined) {
       company = props.company
     }else {
@@ -28,24 +27,23 @@ const CustomerCardContainer=(props)=>{
     }
 
   return(
-    <div className="card grid-y click-function animated " onClick={()=>{props.handleCardClick(props.id)}}>
+    <div className="card grid-y usersearccard ">
         <div className="cell small-5">
           {image}
         </div>
-        <div className="small-7 callout card-body">
-          <div className="grid-y">
+        <div className="small-7 callout card-body card-body-user-customers">
+          <div className="grid-y  ">
             <p className="cell card-date">Created: {date}</p>
-            <h5 className="card-name">{first_name} {last_name}</h5>
+            <h5 className="card-name ">{first_name} {last_name}</h5>
             <div className=" cell info-tag grid-x grid-padding-x">
               <p className="cell small-4 status-tag">Status:</p>
               <div className='cell auto'>
                   <p className={`card-tag ${statusClass}`}>{status}</p>
               </div>
             </div>
-            <div className=" cell info-tag grid-x grid-padding-x">
-              <p className="cell small-4">Company:</p>
+            <div className=" cell info-tag grid-x grid-padding-x ">
               <div className='cell small-offset-2 auto'>
-                  <p>{company}</p>
+                <div onClick={()=>{props.handleCardClick(props)}} className="button success import-button"><p>Import profile</p></div>
               </div>
             </div>
           </div>
@@ -54,4 +52,4 @@ const CustomerCardContainer=(props)=>{
   )
 }
 
-export default CustomerCardContainer
+export default CustomerCardUserContainer

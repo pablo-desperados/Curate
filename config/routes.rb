@@ -5,16 +5,19 @@ Rails.application.routes.draw do
   resources :mainpage, only: [:index]
   devise_for :users
 
-  resources :users, only: [:index,:show] do
+  get "user/view", to: "users#show"
+
+  resources :users, only: [:index, :show] do
     resources :customers, only: [:index, :show, :new, :create, :edit]
   end
 
   namespace :api do
     namespace :v1 do
+      get 'hubspot', to: 'hubspot#index'
       post 'users/search', to: 'users#search'
       get 'users', to: 'users#index'
       resources :users, only: [:show] do
-        resources :customers, only: [:index, :show, :edit]
+        resources :customers, only: [:index, :show, :edit, :create]
       end
       resources :customers, only: [:destroy, :show, :update] do
         resources :diaries, only: [:create, :update, :destroy]

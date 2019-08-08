@@ -9,7 +9,7 @@ class CustomerShowTileContainer extends React.Component{
     super(props)
     this.state={
       current_customer: {},
-      current_user: {},
+      desginated_user: {},
       diary: [],
       selectedDiary:{}
     }
@@ -20,7 +20,7 @@ class CustomerShowTileContainer extends React.Component{
 
   handleDeleteClick(event){
     event["current_customer"] = this.state.current_customer.id
-    fetch(`/api/v1/customers/${this.state.current_user.id}/diaries/${event}`,{
+    fetch(`/api/v1/customers/${this.state.desginated_user.id}/diaries/${event}`,{
       credentials: 'same-origin',
       method: 'DELETE',
       body: JSON.stringify(event),
@@ -70,7 +70,7 @@ class CustomerShowTileContainer extends React.Component{
   }
 
   formPayload(payload){
-    payload["user"] = this.state.current_user
+    payload["user"] = this.state.desginated_user
     fetch(`/api/v1/customers/${this.props.match.params.id}/diaries`,{
       credentials: 'same-origin',
       method: 'POST',
@@ -107,7 +107,7 @@ class CustomerShowTileContainer extends React.Component{
     }
     })
     .then((response=>{
-      this.setState({current_customer: response.customer, current_user: response.user, diary: response.diaries, selectedDiary: response.selected})
+      this.setState({current_customer: response.customer, desginated_user: response.user, diary: response.diaries, selectedDiary: response.selected})
     }))
 
   }
@@ -128,15 +128,15 @@ class CustomerShowTileContainer extends React.Component{
             />
          )
      })
-
-
     }
+
+
     return(
     <div className="customer-show grid-x messages-container">
       <div className="cell small-3 callout-diary-creatio grid-y" >
         <CustomerDashboard
           customerInfo={this.state.current_customer}
-          currentUser={this.state.current_user}
+          currentUser={this.state.desginated_user}
           handleReload={this.handleReload}
           selectedDiary ={this.state.selectedDiary}
           />

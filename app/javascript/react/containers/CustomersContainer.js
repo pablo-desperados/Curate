@@ -72,6 +72,7 @@ class CustomersContainer extends React.Component{
       customers = this.state.customerList.reverse().map(customer=>{
        let date = new Date(customer.created_at)
        let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
+
        return(
          <CustomerCardContainer
            key={customer.id}
@@ -80,7 +81,7 @@ class CustomersContainer extends React.Component{
            full_date={full_date}
            first_name={customer.first_name}
            last_name={customer.last_name}
-           company={customer.company}
+           company={customer.company_name}
            status={customer.lifecycle_status}
            profile_picture={customer.profile_picture}
            />
@@ -89,7 +90,7 @@ class CustomersContainer extends React.Component{
    }
     return(
       <div className="grid-x">
-        <div className="grid-container grid-index-title cell animated fadeInDown">
+        <div className="grid-container grid-index-title cell full animated fadeInDown">
           <div className="grid-x">
             <h1 className="cell auto">Your Contacts</h1>
           </div>

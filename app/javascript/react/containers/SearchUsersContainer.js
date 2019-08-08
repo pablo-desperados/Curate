@@ -6,12 +6,18 @@ class SearchUsersContainer extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      users: []
+      users: [],
+      current_user: ""
     }
     this.handlepayload = this.handlepayload.bind(this)
+    this.handleCardClick = this.handleCardClick.bind(this)
   }
   handlepayload(information){
     this.setState({users: information})
+  }
+
+  handleCardClick(event){
+    this.props.history.push(`/users/${event}`)
   }
 
   componentDidMount(){
@@ -26,20 +32,23 @@ class SearchUsersContainer extends React.Component{
     }
     })
     .then((response)=>{
-      this.setState({users: response})
+      this.setState({users: response.users, current_user: response.current_user})
     })
     .catch((error) =>
       console.error(`Error in fetch: ${error.message}`))
   }
 
+
   render(){
+
     let users="";
     if (this.state.users[0] !== undefined) {
       users = this.state.users.map(element=>{
         return(
         <UserTile
           key={element.user.id}
-          information={element} />)
+          information={element}
+          handleCardClick={this.handleCardClick} />)
       })
 
     }
@@ -51,7 +60,6 @@ class SearchUsersContainer extends React.Component{
             handlepayload={this.handlepayload}/>
         </div>
       </div>
-
       <div className="grid-x grid-margin-x grid-user-index">
         {users}
       </div>

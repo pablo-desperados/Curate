@@ -1,4 +1,5 @@
 class Api::V1::CustomersController < ApiController
+
   before_action :authenticate_user
 
   def index
@@ -17,7 +18,8 @@ class Api::V1::CustomersController < ApiController
   def destroy
     @customer = Customer.find(params[:id])
     if @customer.id == params[:id].to_i
-      @customer.destroy
+      Relation.find_by(user_id: current_user.id, customer_id: @customer.id).destroy
+      Customer.last_relation(@customer)
       @customers = Customer.all
       render json: current_user
     end
@@ -29,6 +31,19 @@ class Api::V1::CustomersController < ApiController
       @customer_to_update.save
 
       render json: current_user
+    end
+
+    def create
+      @new_relation = Relation.new(user: current_user, customer_id: params[:id])
+      @find_relation = Relation.find_by(user_id: current_user.id, customer_id: params[:id])
+      if @find_relation.nil?
+        @new_relation.save
+        render json: current_user
+      else
+        @warning = "You this customer's profile already"
+        render json: {warning: @warning}
+      end
+
     end
 
   private
