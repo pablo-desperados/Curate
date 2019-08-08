@@ -10,7 +10,7 @@ const DiaryEntriesComponent = props =>{
      body = props.information.body
      date = new Date(props.information.created_at)
      full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
-     debugger
+
      if (props.information.user_id === props.currentUser.id) {
        name= <strong>You</strong>
      }else{
