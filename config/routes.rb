@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :mainpage, only: [:index]
   devise_for :users
 
-  get "user/view", to: "users#show"
 
   resources :users, only: [:index, :show] do
     resources :customers, only: [:index, :show, :new, :create, :edit]
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get 'hubspot', to: 'hubspot#index'
       post 'users/search', to: 'users#search'
       get 'users', to: 'users#index'
       resources :users, only: [:show] do
