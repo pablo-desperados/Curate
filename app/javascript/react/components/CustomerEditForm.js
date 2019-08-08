@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import handlingStatus from '../support/cardTag'
 import CustomerForm from './CustomerForm'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser} from '@fortawesome/free-solid-svg-icons'
+import { faUser, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 
 const CustomerEditForm = props =>{
 
@@ -49,7 +49,9 @@ const CustomerEditForm = props =>{
             <p className="diary-updated">Last Updated: {last_updated}</p>
           </div>
           <div className="cell diary-name">
-            <h3>{name}</h3>
+            <div className="grid-x">
+              <h3 className="cell small-8">{name}</h3>
+            </div>
             <h4 className="diary-title ">{title}</h4>
           </div>
       </div>
