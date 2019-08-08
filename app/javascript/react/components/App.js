@@ -13,6 +13,7 @@ const App = (props) => {
         <Switch>
           <Route exact path="/users/:user_id/customers/:id" component={CustomerShowTileContainer} />
           <Route exact path="/users/:id/customers" component={CustomersContainer} />
+          <Route exact path="/users/:id/customers/:id/edit" component={CustomerForm} />
           <Route exact path="/users/:user_id" component={UserShowContainer} />
           <Route exact path="/users/" component={SearchUsersContainer} />
         </Switch>

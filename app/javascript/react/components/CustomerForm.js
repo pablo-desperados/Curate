@@ -64,6 +64,7 @@ class CustomerForm extends React.Component{
   }
 
   componentDidMount(){
+
     fetch(`/api/v1/customers/${this.props.match.params.id}`)
     .then((response)=>{
       if (response.ok) {
