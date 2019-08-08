@@ -18,7 +18,8 @@
 
 .messages-container{
   border-radius: 10px;
-  
+  overflow-x: hidden;
+  animation-duration: 1s;
 }
 
 .comment{
@@ -76,4 +77,7 @@
   padding: 0;
   border: solid 1px black;
 
+}
+.comment-foreign{
+  background: #F4F4F4;
 }

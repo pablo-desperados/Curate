@@ -40,7 +40,6 @@ class UserShowContainer extends React.Component{
         this.setState({errorMessage: "thanks"})
       }
     })
-
   }
 
   componentDidMount(){
@@ -58,7 +57,6 @@ class UserShowContainer extends React.Component{
       this.setState({customerList: response.customers, chosenUser: response.user, currentUser: response.current_user})
     })
   }
-
 
   render(){
     let name
@@ -91,7 +89,6 @@ class UserShowContainer extends React.Component{
    }
 
    let messagesDiv;
-
    if (this.state.errorMessage.length > 0) {
      messagesDiv = <div className="callout cell success"><h4>The user was successfully imported</h4></div>
    }else{
@@ -113,8 +110,6 @@ class UserShowContainer extends React.Component{
         <div className="cell grid-x grid-container grid-customer-index">
             {customers}
         </div>
-
-
       </div>
     )
   }

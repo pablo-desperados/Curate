@@ -8,7 +8,7 @@ class Api::V1::DiariesController < ApiController
     @diary.user = current_user
     if @diary.save
       @diaries = Customer.findusers(@customer.diaries)
-      render json: @diaries
+      render json: @diaries.reverse
     end
   end
 

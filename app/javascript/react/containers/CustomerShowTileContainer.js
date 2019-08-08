@@ -9,9 +9,10 @@ class CustomerShowTileContainer extends React.Component{
     super(props)
     this.state={
       current_customer: {},
-      desginated_user: {},
+      designated_user: {},
       diary: [],
-      selectedDiary:{}
+      selectedDiary:{},
+      current_user: {}
     }
     this.formPayload = this.formPayload.bind(this)
     this.handlePinClick = this.handlePinClick.bind(this)
@@ -20,7 +21,7 @@ class CustomerShowTileContainer extends React.Component{
 
   handleDeleteClick(event){
     event["current_customer"] = this.state.current_customer.id
-    fetch(`/api/v1/customers/${this.state.desginated_user.id}/diaries/${event}`,{
+    fetch(`/api/v1/customers/${this.state.designated_user.id}/diaries/${event}`,{
       credentials: 'same-origin',
       method: 'DELETE',
       body: JSON.stringify(event),
@@ -70,7 +71,7 @@ class CustomerShowTileContainer extends React.Component{
   }
 
   formPayload(payload){
-    payload["user"] = this.state.desginated_user
+    payload["user"] = this.state.designated_user
     fetch(`/api/v1/customers/${this.props.match.params.id}/diaries`,{
       credentials: 'same-origin',
       method: 'POST',
@@ -107,7 +108,7 @@ class CustomerShowTileContainer extends React.Component{
     }
     })
     .then((response=>{
-      this.setState({current_customer: response.customer, desginated_user: response.user, diary: response.diaries, selectedDiary: response.selected})
+      this.setState({current_customer: response.customer, designated_user: response.user, diary: response.diaries, selectedDiary: response.selected, current_user: response.current_user})
     }))
 
   }
@@ -118,11 +119,13 @@ class CustomerShowTileContainer extends React.Component{
        entrypage = <EmptyDiaryEntriesComponent/>
     }else {
      entrypage = this.state.diary.map((entry) =>{
+
          return(
            <DiaryEntriesComponent
              key={entry.diary.id}
              information={entry.diary}
-             user={entry.user}
+             owner={entry.user}
+             currentUser={this.state.current_user}
              handlePinClick={this.handlePinClick}
              handleDeleteClick={this.handleDeleteClick}
             />
@@ -136,7 +139,7 @@ class CustomerShowTileContainer extends React.Component{
       <div className="cell small-3 callout-diary-creatio grid-y" >
         <CustomerDashboard
           customerInfo={this.state.current_customer}
-          currentUser={this.state.desginated_user}
+          currentUser={this.state.designated_user}
           handleReload={this.handleReload}
           selectedDiary ={this.state.selectedDiary}
           />
@@ -144,7 +147,7 @@ class CustomerShowTileContainer extends React.Component{
       <div className="cell auto grid-container ">
         <DiaryFormContainer
           formPayload={this.formPayload} />
-        <div className="diary-entries-container grid-container cell ">
+        <div className="diary-entries-container grid-container cell E">
           {entrypage}
         </div>
       </div>
