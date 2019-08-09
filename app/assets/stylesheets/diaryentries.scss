@@ -20,14 +20,18 @@
   border-radius: 10px;
   overflow-x: hidden;
   animation-duration: 1s;
+  padding-top: 1px;
+  min-height: 150px;
+  min-width: 725px;
 }
 
 .comment{
-  height: 100px;
+  min-width: 700px;
+  height: 90px;
   padding-top: 5px;
   color: #33475b;
   border-radius: 10px;
-  overflow-y: scroll;
+
   .text{
     text-align: left;
     padding:0;
@@ -38,7 +42,7 @@
     font-size: 22px;
     margin-top: 0px;
     margin-bottom: 10px;
-    overflow-x: block;
+    overflow-x: scroll;
     overflow-y: hidden;
     word-wrap:break-word;
   }
@@ -50,20 +54,26 @@
 
 }
 .pin-tag{
-  height: 40px;
+  height: 0;
+  color: #33475b;
   font-size: 13px;
   &:hover{
-    zoom: 1.1;
+    color: #33475b;
+    zoom: 1.02;
   }
 
 
 }
 .tack{
   color: $accent;
+  flex-basis: 50%;
 }
 
 .delete{
   color: red;
+  &:hover{
+    zoom: 1.02;
+  }
 }
 
 .text-tag{

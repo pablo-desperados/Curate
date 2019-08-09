@@ -13,7 +13,7 @@ customer2_photo = open("https://images.unsplash.com/photo-1551854590-dc9c6265b1b
 customer2 = Customer.create!(first_name: "Lisa", last_name: "Milano", email:"milano.2020@email.com", lifecycle_status: "New lead", phone_number: "9994573928", title: "VP of sales", company_name: "Bank of America", location: "Washington DC", profile_picture: customer2_photo)
 
 customer3_photo = open("https://images.unsplash.com/photo-1535419218759-c71f0a6015b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80")
-customer3 = Customer.create!(first_name: "White", last_name: "Williams", email:"williamstheman@penn.edu.com", lifecycle_status: "Disqualified", phone_number: "8442348573", title: "Digital marketing coordinator", company_name: "Draco Industires", location: "Vancouver, ON", profile_picture: customer3_photo)
+customer3 = Customer.create!(first_name: "White", last_name: "Williams", email:"williamstheman@penn.edu.com", lifecycle_status: "Disqualified", phone_number: "8442348573", title: "Digital marketing coordinator", company_name: "Draco Industries", location: "Vancouver, ON", profile_picture: customer3_photo)
 
 customer4_photo= open("https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
 customer4 =Customer.create!(first_name: "Milliard", last_name: "O'Brian", email:"jack.milliard@gmail.com", lifecycle_status: "Contacted", phone_number: "7098532984", title: "Community advisor", company_name: "Facebook", location: "Los Angeles, CA")

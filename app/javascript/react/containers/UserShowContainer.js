@@ -69,7 +69,7 @@ class UserShowContainer extends React.Component{
      customers = <EmptyUserContainer
        user={this.state.chosenUser}/>
    }else {
-      customers = this.state.customerList.reverse().map(customer=>{
+      customers = this.state.customerList.map(customer=>{
        let date = new Date(customer.created_at)
        let full_date = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`
        return(

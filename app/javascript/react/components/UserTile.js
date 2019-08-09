@@ -16,7 +16,7 @@ const UserTile = props =>{
     </div>
   }
   return(
-    <div className="callout cell small-4  click-function grid-container usercardcontainer" onClick={()=>{props.handleCardClick(infoId)}}>
+    <div className="callout card-user cell small-4  click-function grid-container usercardcontainer" onClick={()=>{props.handleCardClick(infoId)}}>
     <div className="cell small-5 grid-container">
       <div className="grid-x ">
         {image}
