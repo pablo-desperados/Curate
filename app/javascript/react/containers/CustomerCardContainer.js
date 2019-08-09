@@ -43,7 +43,7 @@ const CustomerCardContainer=(props)=>{
               </div>
             </div>
             <div className=" cell info-tag grid-x grid-padding-x">
-              <p className="cell small-4">Company:</p>
+              <p className="cell small-3">Company:</p>
               <div className='cell small-offset-2 auto '>
                   <p>{company}</p>
               </div>
