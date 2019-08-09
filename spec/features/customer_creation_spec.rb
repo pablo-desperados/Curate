@@ -36,7 +36,7 @@ feature "Create customer form" do
     click_button "Create Customer"
 
     expect(page).to have_content("Email can't be blank")
-    expect(page).to have_content("Phone number can't be blank")A
+    expect(page).to have_content("Phone number can't be blank")
     expect(page).to have_current_path("/users/#{@user.id}/customers/new")
 
   end
