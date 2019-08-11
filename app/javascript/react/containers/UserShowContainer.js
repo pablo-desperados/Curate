@@ -94,6 +94,7 @@ class UserShowContainer extends React.Component{
    }else{
      messagesDiv =""
    }
+
     return(
       <div className="grid-x">
         <div className="grid-container grid-index-title cell full animated fadeInDown">
