@@ -37,7 +37,7 @@ RSpec.describe Api::V1::DiariesController, type: :controller do
         return_json = JSON.parse(response.body)
         last_created_diary = Diary.last
         expect(last_created_diary["title"]).to eq("This is a new diary title")
-        expect(last_created_diary[""]).to eq("This is a new diary title")
+        expect(last_created_diary["body"]).to eq("This is a new diary body")
       end
     end
 
