@@ -2,6 +2,7 @@ class Api::V1::DiariesController < ApiController
   before_action :authenticate_user
 
   def create
+
     @diary = Diary.new(diary_params)
     @customer = Customer.find(params[:customer_id])
     @diary.customer = @customer
