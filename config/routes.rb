@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :new, :create, :edit]
   end
 
+  get "/oauth-callback", to: "hubspot#index"
+
   namespace :api do
     namespace :v1 do
       post 'users/search', to: 'users#search'

@@ -30,12 +30,12 @@ $main-color: #EAEEF2;
 
 }
 .customer-add{
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 
   .add-customer-button{
     background: $accent;
     border-radius: 25px;
-    font-size: 0.82em;
+    font-size: 0.85em;
     margin-top: 18px;
     margin-top: 10px;
     font-weight: bold;
@@ -61,4 +61,11 @@ $main-color: #EAEEF2;
   height: 100%;
   width: 100%;
   overflow-x:scroll;
+}
+
+.hubspot-integration{
+  background: #f7761f;
+  font-size: 0.70em;
+  font-weight: bold;
+  
 }
