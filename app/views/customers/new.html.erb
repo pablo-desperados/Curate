@@ -1,5 +1,5 @@
+<div class="grid-x" >
 <div class="grid-container form-container-main customer-add">
-  <div class="grid-x" >
     <div class="customer-form">
       <%= form_for [current_user, @customer] do |form| %>
       <% flash.each do |name, msg| %>
@@ -73,6 +73,10 @@
         <%= form.submit class: "add-customer-button button"%>
       </div>
       <% end %>
+      <div class="grid-x">
+        <p class="cell small-offset-1 small-12">- OR -</p>
+        <%= link_to "Import Contacts from HubSpot", 'https://app.hubspot.com/oauth/authorize?client_id=d67d1212-e949-4316-bd76-059051d30bf3&https://app.hubspot.com/oauth/authorize?client_id=d67d1212-e949-4316-bd76-059051d30bf3&redirect_uri=http://localhost:3000/oauth-callback/&scope=contacts%20oauth', class: "cell small-4  large-4 button hubspot-integration" %>
+      </div>
     </div>
   </div>
 </div>
