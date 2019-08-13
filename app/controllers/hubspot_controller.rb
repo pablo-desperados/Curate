@@ -14,10 +14,14 @@ require 'json'
   def get_access(token_code)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback/&scope=contacts%20oauth&code=#{token_code}")
 =======
     @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback&scope=contacts%20oauth&code=#{token_code}")
 >>>>>>> eeadbb49720310efc048cc720f73ffd1265a49bc
+=======
+    @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback/&scope=contacts%20oauth&code=#{token_code}")
+>>>>>>> 182d8c9cbe4ce5b12c3de70124a33bd02875e8d9
 =======
     @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback/&scope=contacts%20oauth&code=#{token_code}")
 >>>>>>> 182d8c9cbe4ce5b12c3de70124a33bd02875e8d9
