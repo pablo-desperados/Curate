@@ -45,6 +45,7 @@ class CustomerShowTileContainer extends React.Component{
     .catch(error => console.error(`Error in fetch: ${error.message}`));
 
   }
+  
   handlePinClick(event){
     fetch(`/api/v1/customers/${this.state.current_customer.id}/diaries/${event.id}`,{
       credentials: 'same-origin',

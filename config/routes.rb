@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :mainpage, only: [:index]
   devise_for :users
 
-
   resources :users, only: [:index, :show] do
     resources :customers, only: [:index, :show, :new, :create, :edit]
   end

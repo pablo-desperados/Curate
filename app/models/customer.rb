@@ -11,6 +11,7 @@ class Customer < ApplicationRecord
     diary_information = data.map{|diary| {diary: diary, user: User.find(diary.user_id)}}
     return diary_information
   end
+  
   def self.update_user(customer, payload)
     customer.first_name = payload[:first_name]
     customer.last_name = payload[:last_name]
