@@ -6,14 +6,16 @@ require 'json'
     @access_code = get_access(params["code"])
     @access_information = get_info(@access_code)
     create_customers(@access_information)
-    redirect_to  user_customers_path(current_user.id)
+    redirect_to  user_customers_path(current_user)
   end
 
 
+
   private
+  
   def get_access(token_code)
 
-    @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback/&scope=contacts%20oauth&code=#{token_code}")
+    @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback&code=#{token_code}")
 
   end
 
@@ -24,7 +26,6 @@ require 'json'
   def create_customers(customer_list)
     customer_list.each do |customer|
       if customer[0] == "contacts"
-
         Customer.create(
           first_name: customer[1][0]["properties"]["firstname"]["value"],
           last_name: customer[1][0]["properties"]["lastname"]["value"],
