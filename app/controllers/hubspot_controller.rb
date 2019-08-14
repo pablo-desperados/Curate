@@ -10,7 +10,6 @@ require 'json'
   end
 
 
-
   private
   
   def get_access(token_code)
@@ -20,6 +19,7 @@ require 'json'
   end
 
   def get_info(credentials)
+    puts "HELLOOOOOOOO ----> #{ENV['HUBSPOT_API']}"
     @contacts = HTTParty.get("https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey=#{ENV['HUBSPOT_API']}&property=firstname&property=lastname&property=email&property=phone&property=jobtitle&property=company")
   end
 
