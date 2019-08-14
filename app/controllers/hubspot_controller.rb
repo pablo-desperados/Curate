@@ -16,14 +16,13 @@ require 'json'
   end
 
   def get_info(credentials)
+    puts "HELLOOOOOOOO ----> #{ENV['HUBSPOT_API']}"
     @contacts = HTTParty.get("https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey=#{ENV['HUBSPOT_API']}&property=firstname&property=lastname&property=email&property=phone&property=jobtitle&property=company")
   end
 
   def create_customers(customer_list)
     customer_list.each do |customer|
-      puts customer
       if customer[0] == "contacts"
-
         Customer.create(
           first_name: customer[1][0]["properties"]["firstname"]["value"],
           last_name: customer[1][0]["properties"]["lastname"]["value"],
