@@ -3,6 +3,7 @@ class HubspotController < ApplicationController
 require 'json'
 
   def index
+    binding.pry
     @access_code = get_access(params["code"])
     @access_information = get_info(@access_code)
     create_customers(@access_information)
@@ -23,6 +24,7 @@ require 'json'
 
   def create_customers(customer_list)
     customer_list.each do |customer|
+      binding.pry
       if customer[0] == "contacts"
 
         Customer.create(
