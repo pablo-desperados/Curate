@@ -11,15 +11,13 @@ require 'json'
 
 
   private
-  
-  def get_access(token_code)
 
+  def get_access(token_code)
     @response = HTTParty.post("https://api.hubapi.com/oauth/v1/token?grant_type=authorization_code&client_id=#{ENV["HUBSPOT"]}&client_secret=#{ENV["SECRET_KEY"]}&redirect_uri=https://curate-io.herokuapp.com/oauth-callback&code=#{token_code}")
 
   end
 
   def get_info(credentials)
-    puts "HELLOOOOOOOO ----> #{ENV['HUBSPOT_API']}"
     @contacts = HTTParty.get("https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey=#{ENV['HUBSPOT_API']}&property=firstname&property=lastname&property=email&property=phone&property=jobtitle&property=company")
   end
 
