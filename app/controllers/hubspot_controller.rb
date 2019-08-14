@@ -20,9 +20,8 @@ require 'json'
   end
 
   def create_customers(customer_list)
-    binding.pry
     customer_list.each do |customer|
-      binding.pry
+      puts customer
       if customer[0] == "contacts"
 
         Customer.create(
