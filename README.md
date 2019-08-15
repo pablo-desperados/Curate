@@ -35,6 +35,6 @@ localhost:3000/mainpage
 
 # Usage
 After signing up/signing in, click on the "New Customer" button located on the navbar or the dashboard and createyour first customer tile.
-
+![logo](README-support/README-gif.gif)
 
 
