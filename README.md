@@ -1,6 +1,5 @@
 # Curate.io
 
-![image-of-curate-logo](https://res.cloudinary.com/dix52sfne/image/upload/v1565832351/LOGO.png)
 
 Visit: https://curate-io.herokuapp.com/
 
