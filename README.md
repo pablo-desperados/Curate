@@ -1,5 +1,9 @@
 # Curate.io
 
+![image-of-curate-logo](https://res.cloudinary.com/dix52sfne/image/upload/v1565832351/LOGO.png)
+
+Visit: https://curate-io.herokuapp.com/
+
 Curate is a "pure" customer engagement tool created to strengthen a user's relationship with its customers thorugh a customer's diary. Users have the ability to build full-fledged profile for their customers (or import their profiles from HubSpot), and keep track of their interactions via diary logs.
 
 Curate.io was built discourage ineffective first contacts such as template sales emails, scripted phone calls, and cold LinkedIn messages, and encourage more authentic relations!
@@ -29,3 +33,5 @@ To access the application locally from your browser, visit:
 localhost:3000/mainpage
 ```
 ***
+# Usage
+
