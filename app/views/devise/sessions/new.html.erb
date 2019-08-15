@@ -6,42 +6,41 @@
         <div class="callout">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <% flash.each do |name, msg| %>
-          <div class="callout alert">
-          <% if msg.class == Array %>
-              <% msg.each do |message| %>
+            <div class="callout alert">
+              <% if msg.class == Array %>
+                <% msg.each do |message| %>
                   <%= content_tag :div, message, :id => "flash_#{name}" %>
+                <% end %>
+              <% else %>
+
+                <%= content_tag :div, msg,:class =>"error-title", :id => "flash_#{name}" %>
+
               <% end %>
-            <% else %>
-
-              <%= content_tag :div, msg,:class =>"error-title", :id => "flash_#{name}" %>
-
-            <% end %>
-          </div>
+            </div>
           <% end %>
-                    <div class="field">
-            <%= f.label :email %><br />
+          <div class="field">
+            <%= f.label :email %><br/>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
 
           <div class="field">
-            <%= f.label :password %><br />
+            <%= f.label :password %><br/>
             <%= f.password_field :password, autocomplete: "current-password" %>
           </div>
 
           <% if devise_mapping.rememberable? %>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
           <% end %>
 
           <div class="actions">
             <%= f.submit "Log in" %>
           </div>
-         <% end %>
-
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
 </div>

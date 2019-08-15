@@ -1,19 +1,20 @@
 <% if resource.errors.any? && !resource.validate%>
-<div class="grid-container">
-  <div class="grid-x align-center">
-    <div class="callout alert columns small-6 " id="error_explanation">
-      <h4 class="error-title">
-        <strong>There was an error in your submission:</strong>
-      </h4>
-      <ul>
-        <% resource.errors.full_messages.each do |message| %>
-        <li class="error-title" ><%= message %></li>
-        <% end %>
-      </ul>
-      <h6 class="error-title" ><strong>Please retry</strong></h6>
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="callout alert columns small-6 " id="error_explanation">
+        <h4 class="error-title">
+          <strong>There was an error in your submission:</strong>
+        </h4>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li class="error-title"><%= message %></li>
+          <% end %>
+        </ul>
+        <h6 class="error-title">
+          <strong>Please retry</strong>
+        </h6>
+      </div>
     </div>
+
   </div>
-
-</div>
-
 <% end %>

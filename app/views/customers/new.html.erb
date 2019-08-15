@@ -1,81 +1,82 @@
-<div class="grid-x" >
-<div class="grid-container form-container-main customer-add">
+<div class="grid-x">
+  <div class="grid-container form-container-main customer-add">
     <div class="customer-form">
       <%= form_for [current_user, @customer] do |form| %>
       <% flash.each do |name, msg| %>
-      <div class="callout alert">
-        <% msg = msg.split(", ") %>
-        <% if msg.class == Array %>
-        <ul className="customer-add-errors">
-          <h4 class="error-title">
-            <strong>There was an error in your submission:</strong>
-          </h4>
-        <% msg.each do |message| %>
-        <li class="error-title" ><%= message %></li>
+        <div class="callout alert">
+          <% msg = msg.split(", ") %>
+            <% if msg.class == Array %>
+              <ul classname="customer-add-errors">
+                <h4 class="error-title">
+                  <strong>There was an error in your submission:</strong>
+                </h4>
+                <% msg.each do |message| %>
+                  <li class="error-title"><%= message %></li>
+                <% end %>
+              </ul>
+
+            <% else %>
+
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+
+            <% end %>
+          </div>
         <% end %>
+        <div class="grid-y profile-picture-container">
+          <h4 class="customer-form-title cell small-offset-3">Add New Customer</h4>
+          <%= image_tag "profile-default.png", width:"100", class: "profile-picture", id: "profile-pic" %>
+          <%= form.file_field :profile_picture, class:"picture-submit cell", onChange: "changePicture()" %>
+        </div>
+        <ul class="accordion accordion-menu-form" data-accordion="data-accordion">
+          <li class="accordion-item is-active" data-accordion-item="data-accordion-item">
+            <a class="accordion-title">Contact Information</a>
+            <div class="accordion-content" data-tab-content="data-tab-content">
+              <div class="grid-x">
+                <div class="cell small-5">
+                  <%= form.label :first_name%>
+                  <%= form.text_field :first_name%>
+                </div>
+                <div class="cell small-5 small-offset-2">
+                  <%= form.label :last_name %>
+                  <%= form.text_field :last_name %>
+                </div>
+              </div>
+              <div class="grid-x">
+                <%= form.label :email %>
+                <%= form.text_field :email %>
+
+                <%= form.label :phone_number %>
+                <%= form.telephone_field(:phone_number) %>
+              </div>
+            </div>
+          </li>
+          <li class="accordion-item" data-accordion-item="data-accordion-item">
+            <a class="accordion-title">Business Information<br>(optional)</a>
+            <div class="accordion-content" data-tab-content="data-tab-content">
+              <div class="grid-x grid-container">
+                <%= form.label :company_name%>
+                <%= form.text_field :company_name%>
+
+                <%= form.label :title, "Job title" %>
+                <%= form.text_field :title %>
+
+                <%= form.label :lifecycle_status, "Lead status" %>
+                <%= form.select(:lifecycle_status, Customer.lifecycle_status) %>
+
+                <%= form.label :location %>
+                <%= form.text_field :location %>
+              </div>
+            </div>
+          </li>
         </ul>
-
-        <% else %>
-
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-
-        <% end %>
-      </div>
-      <% end %>
-      <div class="grid-y profile-picture-container">
-        <h4 class="customer-form-title cell small-offset-3" >Add New Customer</h4>
-        <%= image_tag "profile-default.png", width:"100", class: "profile-picture", id: "profile-pic" %>
-        <%= form.file_field :profile_picture, class:"picture-submit cell", onChange: "changePicture()" %>
-      </div>
-      <ul class="accordion accordion-menu-form" data-accordion >
-        <li class="accordion-item is-active" data-accordion-item>
-          <a class="accordion-title">Contact Information</a>
-          <div class="accordion-content" data-tab-content>
-            <div class="grid-x">
-              <div class="cell small-5">
-                <%= form.label :first_name%>
-                <%= form.text_field :first_name%>
-              </div>
-              <div class="cell small-5 small-offset-2">
-                <%= form.label :last_name %>
-                <%= form.text_field :last_name %>
-              </div>
-            </div>
-            <div class="grid-x">
-              <%= form.label :email %>
-              <%= form.text_field :email %>
-
-              <%= form.label :phone_number %>
-              <%= form.telephone_field(:phone_number) %>
-            </div>
-          </div>
-        </li>
-        <li class="accordion-item" data-accordion-item>
-          <a class="accordion-title">Business Information<br>(optional)</a>
-          <div class="accordion-content" data-tab-content>
-            <div class="grid-x grid-container">
-              <%= form.label :company_name%>
-              <%= form.text_field :company_name%>
-
-              <%= form.label :title, "Job title" %>
-              <%= form.text_field :title %>
-
-              <%= form.label :lifecycle_status, "Lead status" %>
-              <%= form.select(:lifecycle_status, Customer.lifecycle_status) %>
-
-              <%= form.label :location %>
-              <%= form.text_field :location %>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <div class="actions">
-        <%= form.submit class: "add-customer-button button"%>
-      </div>
+        <div class="actions">
+          <%= form.submit class: "add-customer-button button"%>
+        </div>
       <% end %>
       <div class="grid-x">
         <p class="cell small-offset-1 small-12">- OR -</p>
-        <%= link_to "Import Contacts from HubSpot", 'https://app.hubspot.com/oauth/authorize?scope=contacts%20oauth&redirect_uri=https://curate-io.herokuapp.com/oauth-callback&client_id=d67d1212-e949-4316-bd76-059051d30bf3', class: "cell small-4  large-4 button hubspot-integration" %>
+        <%= link_to "Import Contacts from HubSpot", 'https://app.hubspot.com/oauth/authorize?scope=contacts%20oauth&redirect_uri=https://curate-io.herokuapp.com/oauth-callback&client_id=d67d1212-e949-4316-bd76-059051d30bf3', class: "cell small-4 large-4
+        button hubspot-integration" %>
       </div>
     </div>
   </div>

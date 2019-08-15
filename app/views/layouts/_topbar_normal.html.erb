@@ -15,7 +15,6 @@
         <a class="nav-button" href="#">ABOUT</a>
       </li>
       <%- if current_user -%>
-
         <li ><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "nav-button" %></li>
       <%- else -%>
         <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
