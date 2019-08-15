@@ -22,16 +22,22 @@
   height: 325px;
   align-content: center;
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 
+.card-body-user{
+  overflow-y: scroll;
+  height: 120px;
+
+}
 .card-body-user-customers{
   padding-bottom: 200px;
 }
 
 .user-card-picture{
   align-content: center;
+
 }
 
 .grid-user-index{
