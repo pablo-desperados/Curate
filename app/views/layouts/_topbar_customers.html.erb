@@ -1,23 +1,23 @@
 <div class="top-bar top-bar-secondary row columns" id="mobile-menu">
-  <div class="top-bar-left" data-dropdown-menu>
-    <ul class="vertical menu medium-horizontal" data-dropdown-menu>
-      <li class="menu-text"><%= link_to image_tag("logo-secondary.png", width:"150"), root_path %> </li>
-      <li class="dashboard-button"><%= link_to 'DASHBOARD', user_customers_path(current_user),  class: "dashboard-button customer-button button"%> </li>
-      <li class="dashboard-button"><%= link_to 'CREATE CUSTOMER', new_user_customer_path(current_user),  class: "dashboard-button customer-button button"%> </li>
-      <li class="dashboard-button"><%= link_to 'FIND USERS', users_path,  class: "dashboard-button customer-button button"%> </li>
+  <div class="top-bar-left" data-dropdown-menu="data-dropdown-menu">
+    <ul class="vertical menu medium-horizontal" data-dropdown-menu="data-dropdown-menu">
+      <li class="menu-text"><%= link_to image_tag("logo-secondary.png", width:"150"), root_path %></li>
+      <li class="dashboard-button"><%= link_to 'DASHBOARD', user_customers_path(current_user), class: "dashboard-button customer-button button"%></li>
+      <li class="dashboard-button"><%= link_to 'CREATE CUSTOMER', new_user_customer_path(current_user), class: "dashboard-button customer-button button"%></li>
+      <li class="dashboard-button"><%= link_to 'FIND USERS', users_path, class: "dashboard-button customer-button button"%></li>
     </ul>
   </div>
-  <div class="top-bar-right grid-container" id= "mobile-menu">
+  <div class="top-bar-right grid-container" id="mobile-menu">
     <ul class="vertical menu medium-horizontal">
-      <li >
+      <li>
         <a class="nav-button" href="#">ABOUT</a>
       </li>
       <%- if current_user -%>
         <li ><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete, class: "nav-button" %></li>
-      <%- else -%>
-        <li ><%= link_to  'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
-        <li ><%= link_to 'SIGN IN', new_user_session_path, class: "nav-button" %></li>
-      <%- end -%>
+        <%- else -%>
+          <li ><%= link_to 'SIGN UP', new_user_registration_path, class: "nav-button"%></li>
+          <li ><%= link_to 'SIGN IN', new_user_session_path, class: "nav-button" %></li>
+        <%- end -%>
     </ul>
   </div>
 </div>

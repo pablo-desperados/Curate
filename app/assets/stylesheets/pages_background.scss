@@ -23,6 +23,7 @@ $main-color: #EAEEF2;
 }
 
 .validation-content{
+  height: 400px;
   padding-top: 50px;
   @media screen and (max-width: 640px){
     padding-top: 20px;
@@ -67,5 +68,5 @@ $main-color: #EAEEF2;
   background: #f7761f;
   font-size: 0.70em;
   font-weight: bold;
-  
+
 }
