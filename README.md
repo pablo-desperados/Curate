@@ -34,7 +34,14 @@ localhost:3000/mainpage
 ***
 
 # Usage
-After signing up/signing in, click on the "New Customer" button located on the navbar or the dashboard and createyour first customer tile.
-![logo](README-support/Aug-14-2019 23-14-16.gif)
+
+After signing up/signing in, click on the "New Customer" button located on the navbar or the dashboard and create your first customer tile.
+![demonstration-1](readme-demonstration.gif)
+
+
+While on your customer's show page you can write, delete, and pin your favorite logs to their page. Additionally, you can edit and delete customers from their show page.
+![demonstration-2](readme-demonstration-1.gif)
+
+
 
 
