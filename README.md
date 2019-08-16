@@ -5,7 +5,7 @@
 
 Visit: https://curate-io.herokuapp.com/
 
-Curate is a "pure" customer engagement tool created to strengthen a user's relationship with its customers through a customer's diary. Users can build a full-fledged profile for their customers (or import their profiles from HubSpot), and keep track of their interactions via diary logs.
+Curate is a "pure" engagement tool created to strengthen a user's relationship with its clients through a customer's diary. Users can build a full-fledged profile for their customers (or import their profiles from HubSpot), and keep track of their interactions via diary logs.
 Curate.io was built to **discourage ineffective first contacts such as template sales emails, scripted phone calls, and cold LinkedIn messages, and encourage more authentic relations!**
 
 [![Codeship Status for pablo-desperados/Curate](https://app.codeship.com/projects/651b83a0-8f76-0137-ff27-3e651be3cb93/status?branch=master)](https://app.codeship.com/projects/355925)
