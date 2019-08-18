@@ -11,7 +11,7 @@ const UserTile = props => {
     image = <img className="form-image form-image-user" src={props.information.user.profile_photo.url}></img>
   } else {
     image = <div className="grid-x ">
-      <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+      <div className=" grid-container  default-user-picture  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
     </div>
   }
   return (<div className="callout card-user cell small-4  click-function grid-container usercardcontainer" onClick={() => {

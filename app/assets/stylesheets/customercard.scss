@@ -30,7 +30,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   border-bottom: solid 1px #cbd6e2;
-
+  word-wrap: break-word;
 }
 
 .card-tag{
@@ -41,7 +41,7 @@
 }
 
 .status-tag{
-
+  word-wrap: break-word;
   display: table-cell;
   vertical-align: middle;
   margin: 0 auto;

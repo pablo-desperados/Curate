@@ -19,7 +19,7 @@
   margin: 30px 20px;
   margin-right: 30px;
   background: white;
-  height: 325px;
+  height: 345px;
   align-content: center;
   box-shadow: 0 10px 35px rgba(50,50,93,.1),0 2px 15px rgba(0,0,0,.07);
   overflow-y: scroll;
@@ -37,9 +37,7 @@
   height: 120px;
 
 }
-.card-body-user-customers{
-  padding-bottom: 200px;
-}
+
 
 .user-card-picture{
   align-content: center;
@@ -78,4 +76,8 @@
 
 .card-body{
   overflow-y: scroll;
+}
+
+.default-user-picture{
+  padding-bottom: 20px;
 }
