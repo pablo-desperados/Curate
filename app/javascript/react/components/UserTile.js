@@ -10,7 +10,8 @@ const UserTile = props => {
   if (props.information.user.profile_photo.url !== null) {
     image = <img className="form-image form-image-user" src={props.information.user.profile_photo.url}></img>
   } else {
-    image = <div className="grid-x ">
+    image =
+    <div className="grid-x ">
       <div className=" grid-container  default-user-picture  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
     </div>
   }

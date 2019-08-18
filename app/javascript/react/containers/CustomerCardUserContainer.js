@@ -18,10 +18,10 @@ const CustomerCardUserContainer = (props) => {
   }
 
   if (props.profile_picture.url !== null) {
-    image = <img className="card-picture " src={props.profile_picture.url}></img>
+    image = <img className="card-picture" src={props.profile_picture.url}></img>
   } else {
     image = <div className="grid-x">
-      <div className=" grid-container cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+      <div className="grid-container cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
     </div>
   }
 
