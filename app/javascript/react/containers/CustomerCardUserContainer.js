@@ -20,8 +20,8 @@ const CustomerCardUserContainer = (props) => {
   if (props.profile_picture.url !== null) {
     image = <img className="card-picture" src={props.profile_picture.url}></img>
   } else {
-    image = <div className="grid-x ">
-      <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+    image = <div className="grid-x">
+      <div className="grid-container cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
     </div>
   }
 
@@ -35,7 +35,7 @@ const CustomerCardUserContainer = (props) => {
         <h5 className="card-name ">{first_name}
           {last_name}</h5>
         <div className=" cell info-tag grid-x grid-padding-x">
-          <p className="cell small-4 status-tag">Status:</p>
+          <p className="cell small-4 ">Status:</p>
           <div className='cell auto'>
             <p className={`card-tag ${statusClass}`}>{status}</p>
           </div>

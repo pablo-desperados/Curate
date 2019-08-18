@@ -38,7 +38,7 @@ const CustomerCardContainer = (props) => {
         <h5 className="card-name">{first_name}
           {last_name}</h5>
         <div className=" cell info-tag grid-x grid-padding-x">
-          <p className="cell small-4 status-tag">Status:</p>
+          <p className="cell small-4 ">Status:</p>
           <div className='cell auto'>
             <p className={`card-tag ${statusClass}`}>{status}</p>
           </div>
