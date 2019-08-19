@@ -62,11 +62,12 @@ Other things you can do in Curate.io:
   - Carrier Wave gem (file uploading)
   - Devise gem (user authentification)
   - HTTParty gem (API requests)
-  - PostgreSQL
+  - PostgreSQL 15
   
 **Tested with:**
   - Capybara
-  - Enzyme/Jasmine
+  - Enzyme/Jasmine (ran in Karma)
+  - PhantomJS
   - RSpec
   - Shoulda-matcher/FactoryBot
  
