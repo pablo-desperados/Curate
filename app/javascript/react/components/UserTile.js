@@ -3,9 +3,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 
 const UserTile = props => {
-  let infoId = props.information.user.id
+  let userInfoId = props.information.user.id
   let name = `${props.information.user.first_name} ${props.information.user.last_name}`
-  let number = `${props.information.user_num}`
+  let numberOfCustomers = `${props.information.user_num}`
   let image;
   if (props.information.user.profile_photo.url !== null) {
     image = <img className="form-image form-image-user" src={props.information.user.profile_photo.url}></img>
@@ -16,7 +16,7 @@ const UserTile = props => {
     </div>
   }
   return (<div className="callout card-user cell small-4  click-function grid-container usercardcontainer" onClick={() => {
-      props.handleCardClick(infoId)
+      props.handleCardClick(userInfoId)
     }}>
     <div className="cell small-5 grid-container">
       <div className="grid-x ">
@@ -34,7 +34,7 @@ const UserTile = props => {
         <div className=" cell info-tag grid-x grid-padding-x">
           <p className="cell small-4">Customers:</p>
           <div className='cell small-offset-2 auto'>
-            {number}
+            {numberOfCustomers}
           </div>
         </div>
       </div>

@@ -6,23 +6,19 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 const CustomerCardUserContainer = (props) => {
   let image
   let date = props.full_date
-  let first_name = props.first_name
-  let last_name = props.last_name
+  let name = `${props.first_name} ${props.last_name}`
   let statusClass = handlingStatus(props.status)
   let status = props.status
-  let company;
-  if (props.company != undefined) {
-    company = props.company
-  } else {
-    company = "N/A"
-  }
+  let company = props.company
 
   if (props.profile_picture.url !== null) {
     image = <img className="card-picture" src={props.profile_picture.url}></img>
   } else {
     image = <div className="grid-x">
-      <div className="grid-container cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
-    </div>
+              <div className="grid-container cell small-offset-3 small-12 fa-7x user-card-picture">
+                <FontAwesomeIcon icon={faUser}/>
+              </div>
+            </div>
   }
 
   return (<div className="card grid-y usersearccard ">
@@ -32,8 +28,7 @@ const CustomerCardUserContainer = (props) => {
     <div className="small-7 callout card-body card-body-user-customers">
       <div className="grid-y  ">
         <p className="cell card-date">Created: {date}</p>
-        <h5 className="card-name ">{first_name}
-          {last_name}</h5>
+        <h5 className="card-name ">{name}</h5>
         <div className=" cell info-tag grid-x grid-padding-x">
           <p className="cell small-4 ">Status:</p>
           <div className='cell auto'>
