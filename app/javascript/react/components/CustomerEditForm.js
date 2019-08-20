@@ -8,54 +8,41 @@ import {faUser, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 
 const CustomerEditForm = props => {
 
-  let image,
-    last_updated,
-    name,
-    title,
-    status,
-    statusclass,
-    company,
-    location,
-    email,
-    phone_number
-    
-  if (props.information.id !== undefined) {
-    last_updated = new Date(props.information.updated_at)
-    last_updated = `${last_updated.getMonth() + 1}/${last_updated.getDate()}/${last_updated.getFullYear()}`
-    name = `${props.information.first_name} ${props.information.last_name}`
-    title = props.information.title
-    statusclass = handlingStatus(props.information.lifecycle_status)
-    status = props.information.lifecycle_status
-    company = props.information.company_name
-    location = props.information.location
-    email = props.information.email
-    phone_number = props.information.phone_number
-    if (props.information.profile_picture.url !== null) {
-      image = <img className="form-image" src={props.information.profile_picture.url}></img>
-    } else {
-      image = <div className="grid-x ">
-        <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
-      </div>
-    }
-  }
+  let name = `${props.information.first_name} ${props.information.last_name}`
+  let title = props.information.title
+  let statusClass = handlingStatus(props.information.lifecycle_status)
+  let status = props.information.lifecycle_status
+  let company = props.information.company_name
+  let location = props.information.location
+  let email = props.information.email
+  let phoneNumber = props.information.phone_number
+  let dateObject = new Date(props.information.updated_at)
+  let lastUpdatedDate = `${dateObject.getMonth() + 1}/${dateObject.getDate()}/${dateObject.getFullYear()}`
 
-  let minititle,
-    minibody
+  let image =(
+    <div className="grid-x ">
+      <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
+    </div>)
+
+    if (props.information.profile_picture !== undefined) {
+      image = <img className="form-image" src={props.information.profile_picture.url}></img>
+    }
+
+  let minititle = "Select a log to pin here!"
+  let minibody = ""
   if (props.selectedDiary) {
     minititle = props.selectedDiary.title
     minibody = props.selectedDiary.body
-  } else {
-    minititle = "Select a log to pin here!"
-    minibody = ""
   }
 
-  return (<div>
+  return (
+    <div>
     <div className="grid-x grid-margin-x form-container">
       <div className="cell small-8 callout callout-image-form">
         {image}
       </div>
       <div className="cell auto diary-updated-border">
-        <p className="diary-updated">Last Updated: {last_updated}</p>
+        <p className="diary-updated">Last Updated: {lastUpdatedDate}</p>
       </div>
       <div className="cell diary-name">
         <div className="grid-x">
@@ -68,7 +55,7 @@ const CustomerEditForm = props => {
       <div className=" cell grid-x">
         <p className="cell small-2">Status:</p>
         <p className="cell small-offset-1 auto ">
-          <span className={`${statusclass} dashboard-tag`}>{status}</span>
+          <span className={`${statusClass} dashboard-tag`}>{status}</span>
         </p>
       </div>
       <div className=" cell grid-x">
@@ -81,7 +68,7 @@ const CustomerEditForm = props => {
       </div>
       <div className=" cell grid-x">
         <p className="cell small-2">Phone:</p>
-        <p className="cell small-offset-1 auto form-subtitle">{phone_number}</p>
+        <p className="cell small-offset-1 auto form-subtitle">{phoneNumber}</p>
       </div>
       <div className=" cell grid-x">
         <p className="cell small-2">Location:</p>
@@ -111,7 +98,8 @@ const CustomerEditForm = props => {
         </div>
       </div>
     </div>
-  </div>)
+  </div>
+  )
 }
 
 export default CustomerEditForm
