@@ -19,13 +19,14 @@ const CustomerEditForm = props => {
   let dateObject = new Date(props.information.updated_at)
   let lastUpdatedDate = `${dateObject.getMonth() + 1}/${dateObject.getDate()}/${dateObject.getFullYear()}`
 
-  let image =(
-    <div className="grid-x ">
-      <div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div>
-    </div>)
+  let image =<div className="grid-x "><div className=" grid-container  cell small-offset-3 small-12 fa-7x user-card-picture"><FontAwesomeIcon icon={faUser}/></div></div>
+
+
 
     if (props.information.profile_picture !== undefined) {
-      image = <img className="form-image" src={props.information.profile_picture.url}></img>
+      if (props.information.profile_picture.url !== null) {
+        image = <img className="form-image" src={props.information.profile_picture.url}></img>
+      }
     }
 
   let minititle = "Select a log to pin here!"
