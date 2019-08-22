@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 
 <head>
   <title>ProjectLaunch</title>
@@ -10,17 +10,20 @@
 </head>
 <body>
 
-  <div class="title-bar menu-horizontal mobile-navbar" data-responsive-toggle="mobile-menu" data-hide-for="large">
-    <div class="title-bar-title">Menu</div>
+
+  <div class="title-bar no-js menu-horizontal mobile-navbar" data-responsive-toggle="mobile-menu" data-hide-for="large">
+    <div class="title-bar-title ">Menu</div>
     <div class="title-bar-right">
       <button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
     </div>
   </div>
+
   <%- if current_page?(mainpage_index_path) || current_page?(new_user_session_path) ||  current_page?(new_user_registration_path) || current_user.nil?-%>
     <%= render "layouts/topbar_normal" %>
   <%- else -%>
     <%= render "layouts/topbar_customers" %>
   <%- end -%>
+
 
     <%= yield %>
 
