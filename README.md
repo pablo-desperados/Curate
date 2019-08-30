@@ -1,6 +1,6 @@
 # Curate.io
 
-![logo-image](https://camo.githubusercontent.com/0ece5c75b9d0b22afc3856ddafd133514835f1b2/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f646978353273666e652f696d6167652f75706c6f61642f76313536353833323335312f4c4f474f2e706e67)
+![logo-image](https://res.cloudinary.com/dix52sfne/image/upload/v1567207439/logo-345bd6347b28ab50b6f025a32315a385af138caa7bbeaf7cd53418b54b257c10.png)
 
 
 Visit: https://curate-io.herokuapp.com/
