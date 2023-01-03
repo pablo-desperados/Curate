@@ -52,7 +52,7 @@ gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda', '~> 3.5'
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
-gem 'httparty', '~> 0.17.0'
+gem 'httparty', '~> 0.21.0'
 gem "font-awesome-rails"
 gem "fog-aws"
 gem "fog"
